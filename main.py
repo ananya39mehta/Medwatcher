@@ -71,7 +71,7 @@ def display_individual_patient_data():
         # Add code here to display graphs based on patient's health data
         # For example:
         st.line_chart(patient_data_df['Heart rate'])
-        # st.line_chart(patient_data_df['Systolic blood pressure'])
+        st.line_chart(patient_data_df['Systolic blood pressure'])
     except FileNotFoundError:
         st.write("Please enter a valid Patient ID.")
 
