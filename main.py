@@ -36,7 +36,7 @@ class MultiApp:
         if app == "Patients":
             patients.app()
         elif app == "Preferance Range":
-            preferance_range.app()
+            preferancerange.app()
         elif app == 'Alerts':
             alerts.app()
         elif app == 'Contacts':
