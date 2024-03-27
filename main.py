@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 class MultiApp:
-    def _init_(self):
+    def __init__(self):
         self.apps = []
 
     def add_app(self, title, function):
@@ -61,10 +61,10 @@ def display_individual_patient_data():
         
         # Display patient information
         st.write("#### Patient Information:")
-        st.write(f"*Name:* {patient_info['Name']}")
-        st.write(f"*Age:* {patient_info['Age']}")
-        st.write(f"*Gender:* {patient_info['Gender']}")
-        st.write(f"*Label:* {patient_info['Label']}")
+        st.write(f"**Name:** {patient_info['Name']}")
+        st.write(f"**Age:** {patient_info['Age']}")
+        st.write(f"**Gender:** {patient_info['Gender']}")
+        st.write(f"**Label:** {patient_info['Label']}")
         
         # Display graphs related to patient's health data
         st.write("#### Health Data:")
@@ -75,6 +75,6 @@ def display_individual_patient_data():
     except FileNotFoundError:
         st.write("Please enter a valid Patient ID.")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     multi_app = MultiApp()
     multi_app.run()
