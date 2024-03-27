@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+import patients, preferance_range, alerts, contacts
 import pandas as pd
 
 st.set_page_config(
@@ -33,52 +34,46 @@ class MultiApp:
             )
 
         if app == "Patients":
-            display_all_patients()
-
+            patients.app()
         elif app == "Preferance Range":
-            display_patients_by_preference()
+            preferance_range.app()
+        elif app == 'Alerts':
+            alerts.app()
+        elif app == 'Contacts':
+            contacts.app()
+        elif app == 'Individual Patient Data':
+            display_individual_patient_data()
 
-        # Add other app sections as needed
+def display_individual_patient_data():
+    st.write("### Individual Patient Data")
 
-def display_all_patients():
-    st.write("### All Patients")
-
+    # Allow user to input patient ID
+    patient_id = st.text_input("Enter Patient ID:")
+    
     # Read main CSV file
     main_df = pd.read_csv("main.csv")
 
-    # Display all patients
-    st.write(main_df)
-
-def display_patients_by_preference():
-    st.write("### Patients Matching Preference Range")
-
-    # Allow user to input preference range
-    preference_range = st.slider("Enter Preference Range", min_value=0, max_value=100, value=(0, 100))
-
-    # Read main CSV file
-    main_df = pd.read_csv("main.csv")
-
-    # Initialize an empty list to store patients matching the preference range
-    matching_patients = []
-
-    # Iterate through each patient's data
-    for index, row in main_df.iterrows():
-        # Get the patient's ID
-        patient_id = row['Patient ID']
-        # Read the patient's individual CSV file
-        patient_data_filename = f"{patient_id}.csv"
-        patient_data_df = pd.read_csv(patient_data_filename)
-        # Check if the last record matches the preference range
-        last_record = patient_data_df.iloc[-1]
-        if all(preference_range[0] <= value <= preference_range[1] for value in last_record.values):
-            matching_patients.append(row)
-
-    # Display matching patients
-    if matching_patients:
-        matching_patients_df = pd.DataFrame(matching_patients)
-        st.write(matching_patients_df)
-    else:
-        st.write("No patients found matching the preference range.")
+    # Read individual patient CSV file based on entered patient ID
+    filename = f"{patient_id}.csv"
+    try:
+        patient_data_df = pd.read_csv(filename)
+        patient_info = main_df[main_df["Patient ID"] == int(patient_id)].iloc[0]
+        
+        # Display patient information
+        st.write("#### Patient Information:")
+        st.write(f"**Name:** {patient_info['Name']}")
+        st.write(f"**Age:** {patient_info['Age']}")
+        st.write(f"**Gender:** {patient_info['Gender']}")
+        st.write(f"**Label:** {patient_info['Label']}")
+        
+        # Display graphs related to patient's health data
+        st.write("#### Health Data:")
+        # Add code here to display graphs based on patient's health data
+        # For example:
+        # st.line_chart(patient_data_df['Heart rate'])
+        # st.line_chart(patient_data_df['Systolic blood pressure'])
+    except FileNotFoundError:
+        st.write("Please enter a valid Patient ID.")
 
 if __name__ == "__main__":
     multi_app = MultiApp()
