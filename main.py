@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 class MultiApp:
-    def _init_(self):
+    def __init__(self):
         self.apps = []
 
     def add_app(self, title, function):
@@ -42,6 +42,6 @@ class MultiApp:
         elif app == 'Contacts':
             contacts.app()
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     multi_app = MultiApp()
     multi_app.run()
