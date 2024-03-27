@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import patients, preferance_range, alerts, contacts
+import patients, preferancerange, alerts, contacts
 import pandas as pd
 
 st.set_page_config(
@@ -36,7 +36,7 @@ class MultiApp:
         if app == "Patients":
             patients.app()
         elif app == "Preferance Range":
-            preferance_range.app()
+            preferancerange.app()
         elif app == 'Alerts':
             alerts.app()
         elif app == 'Contacts':
