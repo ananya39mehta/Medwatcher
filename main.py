@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import patients, preferance_range, alerts, contacts
+import patients, preferancerange, alerts, contacts
 import pandas as pd
 
 st.set_page_config(
