@@ -1,40 +1,56 @@
 import streamlit as st
 
 def app():
-    st.title("Preference Range")
+    st.title("Patients Matching Preference Range")
 
-    # Define the parameters and their initial ranges
+    # Allow user to input preference range
     parameters = [
-        {"name": "Heart Rate", "min_range": 60, "max_range": 100},
-        {"name": "Blood Pressure", "min_range": 80, "max_range": 120},
-        {"name": "Respiratory Rate", "min_range": 10, "max_range": 20},
-        {"name": "Blood Glucose", "min_range": 70, "max_range": 110},
-        {"name": "Oxygen Saturation", "min_range": 95, "max_range": 100},
-        {"name": "Body Temperature", "min_range": 97, "max_range": 99}
+        "Heart rate",
+        "Systolic blood pressure",
+        "Diastolic blood pressure",
+        "Respiratory rate",
+        "Blood glucose",
+        "Oxygen saturation",
+        "Body temperature"
     ]
-
-    # Display sliders for each parameter
+    preference_range = {}
     for parameter in parameters:
-        st.write(f"### {parameter['name']}")
-        min_val = st.slider(f"Minimum {parameter['name']}", key=f"min_{parameter['name']}", min_value=0, max_value=150, value=parameter['min_range'])
-        max_val = st.slider(f"Maximum {parameter['name']}", key=f"max_{parameter['name']}", min_value=0, max_value=150, value=parameter['max_range'])
+        min_val = st.slider(f"Minimum {parameter}", key=f"min_{parameter}", min_value=0, max_value=200, value=0)
+        max_val = st.slider(f"Maximum {parameter}", key=f"max_{parameter}", min_value=0, max_value=200, value=200)
+        preference_range[parameter] = (min_val, max_val)
 
-        # Update the parameter dictionary with new ranges
-        parameter['min_range'] = min_val
-        parameter['max_range'] = max_val
+    # Read main CSV file
+    main_df = pd.read_csv("main.csv")
 
-    # Display button to apply preferences
-    if st.button("Apply Preferences"):
-        # Process preferences here
-        with open("parameter_ranges.txt", "w") as file:
-            file.write("Parameter Ranges:\n")
+    # Initialize an empty DataFrame to store matching patients' details
+    matching_patients_details = pd.DataFrame(columns=main_df.columns)
+
+    # Iterate through each patient's data
+    for index, row in main_df.iterrows():
+        # Get the patient's ID
+        patient_id = row['Patient ID']
+        # Read the patient's individual CSV file
+        patient_data_filename = f"{patient_id}.csv"
+        try:
+            patient_data_df = pd.read_csv(patient_data_filename, parse_dates=[0])
+            # Get the last record of patient's data
+            last_record = patient_data_df.iloc[-1]
+            # Check if the last record matches the preference range for all parameters
+            match_preference = True
             for parameter in parameters:
-                file.write(f"{parameter['name']}:\n")
-                file.write(f"\tMinimum: {parameter['min_range']}\n")
-                file.write(f"\tMaximum: {parameter['max_range']}\n")
-                file.write("\n")
+                if not (preference_range[parameter][0] <= last_record[parameter] <= preference_range[parameter][1]):
+                    match_preference = False
+                    break
+            if match_preference:
+                matching_patients_details = matching_patients_details.append(row)
+        except FileNotFoundError:
+            pass
 
-        st.markdown("[Download Parameter Ranges](./parameter_ranges.txt)")
+    # Display matching patients' details
+    if not matching_patients_details.empty:
+        st.write(matching_patients_details)
+    else:
+        st.write("No patients found matching the preference range.")
 app()
 
 
