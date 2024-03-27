@@ -75,6 +75,6 @@ def display_individual_patient_data():
     except FileNotFoundError:
         st.write("Please enter a valid Patient ID.")
 
-if _name_ == "__main__":
+if _name_ == "_main_":
     multi_app = MultiApp()
     multi_app.run()
