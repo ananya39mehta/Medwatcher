@@ -60,6 +60,9 @@ def display_individual_patient_data():
         patient_data_df = pd.read_csv(filename)
         patient_info = main_df[main_df["Patient ID"] == int(patient_id)].iloc[0]
         
+        # Convert the index to datetime
+        patient_data_df.index = pd.to_datetime(patient_data_df.index)
+        
         # Display patient information
         st.write("#### Patient Information:")
         st.write(f"**Name:** {patient_info['Name']}")
@@ -87,6 +90,7 @@ def display_individual_patient_data():
 
     except FileNotFoundError:
         st.write("Please enter a valid Patient ID.")
+
 
 if __name__ == "__main__":
     multi_app = MultiApp()
