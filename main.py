@@ -2,7 +2,6 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import patients, preferancerange, alerts, contacts
 import pandas as pd
-import matplotlib.pyplot as plt
 
 st.set_page_config(
     page_title="MedWatcher"
@@ -10,7 +9,7 @@ st.set_page_config(
 )
 
 class MultiApp:
-    def __init__(self):
+    def _init_(self):
         self.apps = []
 
     def add_app(self, title, function):
@@ -60,38 +59,22 @@ def display_individual_patient_data():
         patient_data_df = pd.read_csv(filename)
         patient_info = main_df[main_df["Patient ID"] == int(patient_id)].iloc[0]
         
-        # Convert the index to datetime
-        patient_data_df.index = pd.to_datetime(patient_data_df.index)
-        
         # Display patient information
         st.write("#### Patient Information:")
-        st.write(f"**Name:** {patient_info['Name']}")
-        st.write(f"**Age:** {patient_info['Age']}")
-        st.write(f"**Gender:** {patient_info['Gender']}")
-        st.write(f"**Label:** {patient_info['Label']}")
+        st.write(f"*Name:* {patient_info['Name']}")
+        st.write(f"*Age:* {patient_info['Age']}")
+        st.write(f"*Gender:* {patient_info['Gender']}")
+        st.write(f"*Label:* {patient_info['Label']}")
         
         # Display graphs related to patient's health data
         st.write("#### Health Data:")
-        # Plot heart rate with Matplotlib
-        plt.figure(figsize=(8, 6))
-        plt.plot(patient_data_df.index, patient_data_df['Heart rate'])
-        plt.xlabel('Time')
-        plt.ylabel('Heart rate')
-        plt.title('Heart Rate vs. Time')
-        st.pyplot()
-        
-        # Plot systolic blood pressure with Matplotlib
-        plt.figure(figsize=(8, 6))
-        plt.plot(patient_data_df.index, patient_data_df['Systolic blood pressure'])
-        plt.xlabel('Time')
-        plt.ylabel('Systolic blood pressure')
-        plt.title('Systolic Blood Pressure vs. Time')
-        st.pyplot()
-
+        # Add code here to display graphs based on patient's health data
+        # For example:
+        st.line_chart(patient_data_df['Heart rate'])
+        st.line_chart(patient_data_df['Systolic blood pressure'])
     except FileNotFoundError:
         st.write("Please enter a valid Patient ID.")
 
-
-if __name__ == "__main__":
+if _name_ == "_main_":
     multi_app = MultiApp()
     multi_app.run()
