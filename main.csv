@@ -1,0 +1,11 @@
+Patient ID,Name,Age,Gender,Hospital,Label
+101,Jaya,25,Female,Hospital A,Diabetic
+102,Umang,88,Male,Hospital B,Old
+103,Jhanvi,29,Female,Hospital A,New mother
+104,Miraya,51,Female,Hospital A,Diabetic
+105,Madhavi,69,Female,Hospital C,Diabetic
+106,Uthkarsh,83,Male,Hospital C,Heart
+107,Kartika,28,Female,Hospital A,Pregnant
+108,Kiaan,61,Male,Hospital C,Old
+109,Abram,89,Male,Hospital C,Post surgery
+110,Kabir,86,Male,Hospital A,Old
