@@ -6,12 +6,12 @@ def app():
 
     # Define the parameters and their initial ranges
     parameters = [
-        {"name": "Parameter 1", "min_range": 0, "max_range": 100},
-        {"name": "Parameter 2", "min_range": 0, "max_range": 100},
-        {"name": "Parameter 3", "min_range": 0, "max_range": 100},
-        {"name": "Parameter 4", "min_range": 0, "max_range": 100},
-        {"name": "Parameter 5", "min_range": 0, "max_range": 100},
-        {"name": "Parameter 6", "min_range": 0, "max_range": 100}
+        {"Heart Rate": "Parameter 1", "min_range": 0, "max_range": 100},
+        {"Blood Pressure": "Parameter 2", "min_range": 0, "max_range": 100},
+        {"Respiratory Rate": "Parameter 3", "min_range": 0, "max_range": 100},
+        {"Blood Glucose": "Parameter 4", "min_range": 0, "max_range": 100},
+        {"Oxygen Saturation": "Parameter 5", "min_range": 0, "max_range": 100},
+        {"Body Temperature": "Parameter 6", "min_range": 0, "max_range": 100}
     ]
 
     # Display sliders for each parameter
