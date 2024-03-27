@@ -1,7 +1,8 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import patients, preferancerange, alerts, contacts
+import patients, preferance_range, alerts, contacts
 import pandas as pd
+import matplotlib.pyplot as plt
 
 st.set_page_config(
     page_title="MedWatcher"
@@ -36,7 +37,7 @@ class MultiApp:
         if app == "Patients":
             patients.app()
         elif app == "Preferance Range":
-            preferancerange.app()
+            preferance_range.app()
         elif app == 'Alerts':
             alerts.app()
         elif app == 'Contacts':
@@ -68,10 +69,22 @@ def display_individual_patient_data():
         
         # Display graphs related to patient's health data
         st.write("#### Health Data:")
-        # Add code here to display graphs based on patient's health data
-        # For example:
-        st.line_chart(patient_data_df['Heart rate'])
-        st.line_chart(patient_data_df['Systolic blood pressure'])
+        # Plot heart rate with Matplotlib
+        plt.figure(figsize=(8, 6))
+        plt.plot(patient_data_df.index, patient_data_df['Heart rate'])
+        plt.xlabel('Time')
+        plt.ylabel('Heart rate')
+        plt.title('Heart Rate vs. Time')
+        st.pyplot()
+        
+        # Plot systolic blood pressure with Matplotlib
+        plt.figure(figsize=(8, 6))
+        plt.plot(patient_data_df.index, patient_data_df['Systolic blood pressure'])
+        plt.xlabel('Time')
+        plt.ylabel('Systolic blood pressure')
+        plt.title('Systolic Blood Pressure vs. Time')
+        st.pyplot()
+
     except FileNotFoundError:
         st.write("Please enter a valid Patient ID.")
 
