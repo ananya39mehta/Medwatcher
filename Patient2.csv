@@ -1,0 +1,762 @@
+Unnamed: 0,Date,Code,Glucose,Task
+0,10-10-1989 08:00,58,149,Pre-breakfast blood glucose measurement
+1,10-10-1989 08:00,33,010,Regular insulin dose
+2,10-10-1989 12:00,60,116,Pre-lunch blood glucose measurement
+3,10-10-1989 12:00,33,004,Regular insulin dose
+4,10-10-1989 18:00,62,304,Pre-supper blood glucose measurement
+5,10-10-1989 18:00,33,010,Regular insulin dose
+6,10-10-1989 22:00,48,063,Unspecified blood glucose measurement
+7,10-10-1989 22:00,33,014,Regular insulin dose
+8,10-11-1989 08:00,58,171,Pre-breakfast blood glucose measurement
+9,10-11-1989 08:00,33,010,Regular insulin dose
+10,10-11-1989 12:00,60,148,Pre-lunch blood glucose measurement
+11,10-11-1989 12:00,33,004,Regular insulin dose
+12,10-11-1989 18:00,62,115,Pre-supper blood glucose measurement
+13,10-11-1989 18:00,33,010,Regular insulin dose
+14,10-11-1989 22:00,48,130,Unspecified blood glucose measurement
+15,10-11-1989 22:00,33,014,Regular insulin dose
+16,10-12-1989 08:00,58,220,Pre-breakfast blood glucose measurement
+17,10-12-1989 08:00,33,010,Regular insulin dose
+18,10-12-1989 18:00,62,125,Pre-supper blood glucose measurement
+19,10-12-1989 18:00,33,010,Regular insulin dose
+20,10-12-1989 22:00,48,110,Unspecified blood glucose measurement
+21,10-12-1989 22:00,33,014,Regular insulin dose
+22,10-13-1989 08:00,58,288,Pre-breakfast blood glucose measurement
+23,10-13-1989 08:00,33,010,Regular insulin dose
+24,10-13-1989 12:00,60,284,Pre-lunch blood glucose measurement
+25,10-13-1989 12:00,33,004,Regular insulin dose
+26,10-13-1989 18:00,62,047,Pre-supper blood glucose measurement
+27,10-13-1989 18:00,33,010,Regular insulin dose
+28,10-13-1989 22:00,48,288,Unspecified blood glucose measurement
+29,10-13-1989 22:00,33,014,Regular insulin dose
+30,10-14-1989 08:00,58,201,Pre-breakfast blood glucose measurement
+31,10-14-1989 08:00,33,010,Regular insulin dose
+32,10-14-1989 12:00,60,141,Pre-lunch blood glucose measurement
+33,10-14-1989 12:00,33,004,Regular insulin dose
+34,10-14-1989 18:00,62,170,Pre-supper blood glucose measurement
+35,10-14-1989 18:00,33,010,Regular insulin dose
+36,10-14-1989 22:00,48,131,Unspecified blood glucose measurement
+37,10-14-1989 22:00,33,014,Regular insulin dose
+38,10-15-1989 08:00,58,206,Pre-breakfast blood glucose measurement
+39,10-15-1989 08:00,33,010,Regular insulin dose
+40,10-15-1989 12:00,60,168,Pre-lunch blood glucose measurement
+41,10-15-1989 12:00,33,004,Regular insulin dose
+42,10-15-1989 18:00,62,176,Pre-supper blood glucose measurement
+43,10-15-1989 18:00,33,010,Regular insulin dose
+44,10-15-1989 22:00,48,263,Unspecified blood glucose measurement
+45,10-15-1989 22:00,33,014,Regular insulin dose
+46,10-16-1989 08:00,58,344,Pre-breakfast blood glucose measurement
+47,10-16-1989 08:00,33,012,Regular insulin dose
+48,10-16-1989 12:00,60,248,Pre-lunch blood glucose measurement
+49,10-16-1989 12:00,33,006,Regular insulin dose
+50,10-16-1989 18:00,62,146,Pre-supper blood glucose measurement
+51,10-16-1989 18:00,33,010,Regular insulin dose
+52,10-16-1989 22:00,48,247,Unspecified blood glucose measurement
+53,10-16-1989 22:00,33,014,Regular insulin dose
+54,10-17-1989 08:00,58,124,Pre-breakfast blood glucose measurement
+55,10-17-1989 08:00,33,010,Regular insulin dose
+56,10-17-1989 12:00,60,188,Pre-lunch blood glucose measurement
+57,10-17-1989 12:00,33,004,Regular insulin dose
+58,10-17-1989 18:00,62,205,Pre-supper blood glucose measurement
+59,10-17-1989 18:00,33,010,Regular insulin dose
+60,10-17-1989 22:00,48,208,Unspecified blood glucose measurement
+61,10-17-1989 22:00,33,014,Regular insulin dose
+62,10-18-1989 08:00,58,313,Pre-breakfast blood glucose measurement
+63,10-18-1989 08:00,33,014,Regular insulin dose
+64,10-18-1989 12:00,60,148,Pre-lunch blood glucose measurement
+65,10-18-1989 12:00,33,004,Regular insulin dose
+66,10-18-1989 18:00,62,325,Pre-supper blood glucose measurement
+67,10-18-1989 18:00,33,012,Regular insulin dose
+68,10-18-1989 22:00,48,134,Unspecified blood glucose measurement
+69,10-18-1989 22:00,33,014,Regular insulin dose
+70,10-19-1989 08:00,58,090,Pre-breakfast blood glucose measurement
+71,10-19-1989 08:00,33,010,Regular insulin dose
+72,10-19-1989 12:00,60,192,Pre-lunch blood glucose measurement
+73,10-19-1989 12:00,33,004,Regular insulin dose
+74,10-19-1989 18:00,62,057,Pre-supper blood glucose measurement
+75,10-19-1989 18:00,33,010,Regular insulin dose
+76,10-19-1989 22:00,48,099,Unspecified blood glucose measurement
+77,10-19-1989 22:00,33,014,Regular insulin dose
+78,10-20-1989 08:00,58,153,Pre-breakfast blood glucose measurement
+79,10-20-1989 08:00,33,010,Regular insulin dose
+80,10-20-1989 12:00,60,169,Pre-lunch blood glucose measurement
+81,10-20-1989 12:00,33,004,Regular insulin dose
+82,10-20-1989 18:00,62,084,Pre-supper blood glucose measurement
+83,10-20-1989 18:00,33,010,Regular insulin dose
+84,10-20-1989 22:00,48,144,Unspecified blood glucose measurement
+85,10-20-1989 22:00,33,014,Regular insulin dose
+86,10-21-1989 08:00,58,261,Pre-breakfast blood glucose measurement
+87,10-21-1989 08:00,33,012,Regular insulin dose
+88,10-21-1989 12:00,60,306,Pre-lunch blood glucose measurement
+89,10-21-1989 12:00,33,006,Regular insulin dose
+90,10-21-1989 18:00,62,206,Pre-supper blood glucose measurement
+91,10-21-1989 18:00,33,010,Regular insulin dose
+92,10-21-1989 22:00,48,192,Unspecified blood glucose measurement
+93,10-21-1989 22:00,33,014,Regular insulin dose
+94,10-22-1989 08:00,58,216,Pre-breakfast blood glucose measurement
+95,10-22-1989 08:00,33,010,Regular insulin dose
+96,10-22-1989 12:00,60,296,Pre-lunch blood glucose measurement
+97,10-22-1989 12:00,33,006,Regular insulin dose
+98,10-22-1989 18:00,62,094,Pre-supper blood glucose measurement
+99,10-22-1989 18:00,33,010,Regular insulin dose
+100,10-22-1989 22:00,48,212,Unspecified blood glucose measurement
+101,10-22-1989 22:00,33,014,Regular insulin dose
+102,10-23-1989 08:00,58,249,Pre-breakfast blood glucose measurement
+103,10-23-1989 08:00,33,010,Regular insulin dose
+104,10-23-1989 12:00,60,209,Pre-lunch blood glucose measurement
+105,10-23-1989 12:00,33,004,Regular insulin dose
+106,10-23-1989 18:00,62,174,Pre-supper blood glucose measurement
+107,10-23-1989 18:00,33,010,Regular insulin dose
+108,10-23-1989 22:00,48,182,Unspecified blood glucose measurement
+109,10-23-1989 22:00,33,014,Regular insulin dose
+110,10-24-1989 08:00,58,150,Pre-breakfast blood glucose measurement
+111,10-24-1989 08:00,33,010,Regular insulin dose
+112,10-24-1989 12:00,60,070,Pre-lunch blood glucose measurement
+113,10-24-1989 12:00,33,004,Regular insulin dose
+114,10-24-1989 18:00,62,253,Pre-supper blood glucose measurement
+115,10-24-1989 18:00,33,010,Regular insulin dose
+116,10-24-1989 22:00,48,128,Unspecified blood glucose measurement
+117,10-24-1989 22:00,33,014,Regular insulin dose
+118,10-25-1989 08:00,58,180,Pre-breakfast blood glucose measurement
+119,10-25-1989 08:00,33,010,Regular insulin dose
+120,10-25-1989 12:00,60,223,Pre-lunch blood glucose measurement
+121,10-25-1989 12:00,33,004,Regular insulin dose
+122,10-25-1989 18:00,62,286,Pre-supper blood glucose measurement
+123,10-25-1989 18:00,33,014,Regular insulin dose
+124,10-25-1989 22:00,48,182,Unspecified blood glucose measurement
+125,10-25-1989 22:00,33,014,Regular insulin dose
+126,10-26-1989 08:00,58,285,Pre-breakfast blood glucose measurement
+127,10-26-1989 08:00,34,014,NPH insulin dose
+128,10-26-1989 12:00,60,220,Pre-lunch blood glucose measurement
+129,10-26-1989 12:00,33,004,Regular insulin dose
+130,10-26-1989 18:00,62,141,Pre-supper blood glucose measurement
+131,10-26-1989 18:00,33,010,Regular insulin dose
+132,10-26-1989 22:00,48,140,Unspecified blood glucose measurement
+133,10-26-1989 22:00,33,014,Regular insulin dose
+134,10-27-1989 08:00,58,217,Pre-breakfast blood glucose measurement
+135,10-27-1989 08:00,33,010,Regular insulin dose
+136,10-27-1989 08:00,34,014,NPH insulin dose
+137,10-27-1989 12:00,60,212,Pre-lunch blood glucose measurement
+138,10-27-1989 12:00,33,004,Regular insulin dose
+139,10-27-1989 18:00,62,288,Pre-supper blood glucose measurement
+140,10-27-1989 18:00,33,012,Regular insulin dose
+141,10-27-1989 22:00,48,236,Unspecified blood glucose measurement
+142,10-27-1989 22:00,33,014,Regular insulin dose
+143,10-28-1989 08:00,58,193,Pre-breakfast blood glucose measurement
+144,10-28-1989 08:00,33,010,Regular insulin dose
+145,10-28-1989 12:00,60,085,Pre-lunch blood glucose measurement
+146,10-28-1989 12:00,33,004,Regular insulin dose
+147,10-28-1989 18:00,62,156,Pre-supper blood glucose measurement
+148,10-28-1989 18:00,33,010,Regular insulin dose
+149,10-28-1989 22:00,48,236,Unspecified blood glucose measurement
+150,10-28-1989 22:00,33,014,Regular insulin dose
+151,10-29-1989 08:00,58,237,Pre-breakfast blood glucose measurement
+152,10-29-1989 08:00,33,010,Regular insulin dose
+153,10-29-1989 12:00,60,145,Pre-lunch blood glucose measurement
+154,10-29-1989 12:00,33,004,Regular insulin dose
+155,10-29-1989 18:00,62,141,Pre-supper blood glucose measurement
+156,10-29-1989 18:00,33,014,Regular insulin dose
+157,10-29-1989 22:00,48,388,Unspecified blood glucose measurement
+158,10-29-1989 22:00,33,018,Regular insulin dose
+159,10-30-1989 08:00,58,274,Pre-breakfast blood glucose measurement
+160,10-30-1989 08:00,33,012,Regular insulin dose
+161,10-30-1989 12:00,60,201,Pre-lunch blood glucose measurement
+162,10-30-1989 12:00,33,004,Regular insulin dose
+163,10-30-1989 18:00,62,365,Pre-supper blood glucose measurement
+164,10-30-1989 18:00,33,014,Regular insulin dose
+165,10-30-1989 22:00,48,223,Unspecified blood glucose measurement
+166,10-30-1989 22:00,33,014,Regular insulin dose
+167,10-31-1989 08:00,58,275,Pre-breakfast blood glucose measurement
+168,10-31-1989 08:00,33,012,Regular insulin dose
+169,10-31-1989 12:00,60,0Hi,Pre-lunch blood glucose measurement
+170,10-31-1989 12:00,33,008,Regular insulin dose
+171,10-31-1989 18:00,62,137,Pre-supper blood glucose measurement
+172,10-31-1989 18:00,33,010,Regular insulin dose
+173,10-31-1989 22:00,48,166,Unspecified blood glucose measurement
+174,10-31-1989 22:00,33,014,Regular insulin dose
+175,11-01-1989 08:00,58,127,Pre-breakfast blood glucose measurement
+176,11-01-1989 08:00,33,010,Regular insulin dose
+177,11-01-1989 12:00,60,173,Pre-lunch blood glucose measurement
+178,11-01-1989 12:00,33,004,Regular insulin dose
+179,11-01-1989 18:00,62,225,Pre-supper blood glucose measurement
+180,11-01-1989 18:00,33,010,Regular insulin dose
+181,11-01-1989 22:00,48,184,Unspecified blood glucose measurement
+182,11-01-1989 22:00,33,014,Regular insulin dose
+183,11-02-1989 08:00,58,262,Pre-breakfast blood glucose measurement
+184,11-02-1989 08:00,33,012,Regular insulin dose
+185,11-02-1989 12:00,60,376,Pre-lunch blood glucose measurement
+186,11-02-1989 12:00,33,008,Regular insulin dose
+187,11-02-1989 18:00,62,250,Pre-supper blood glucose measurement
+188,11-02-1989 18:00,33,012,Regular insulin dose
+189,11-02-1989 22:00,48,119,Unspecified blood glucose measurement
+190,11-02-1989 22:00,33,014,Regular insulin dose
+191,11-03-1989 08:00,58,194,Pre-breakfast blood glucose measurement
+192,11-03-1989 08:00,33,010,Regular insulin dose
+193,11-03-1989 12:00,60,259,Pre-lunch blood glucose measurement
+194,11-03-1989 12:00,33,006,Regular insulin dose
+195,11-03-1989 18:00,62,221,Pre-supper blood glucose measurement
+196,11-03-1989 18:00,33,010,Regular insulin dose
+197,11-03-1989 22:00,48,297,Unspecified blood glucose measurement
+198,11-03-1989 22:00,33,016,Regular insulin dose
+199,11-04-1989 08:00,58,223,Pre-breakfast blood glucose measurement
+200,11-04-1989 08:00,33,010,Regular insulin dose
+201,11-04-1989 12:00,60,325,Pre-lunch blood glucose measurement
+202,11-04-1989 12:00,33,008,Regular insulin dose
+203,11-04-1989 18:00,62,0Hi,Pre-supper blood glucose measurement
+204,11-04-1989 18:00,33,014,Regular insulin dose
+205,11-04-1989 22:00,48,393,Unspecified blood glucose measurement
+206,11-04-1989 22:00,33,018,Regular insulin dose
+207,11-05-1989 08:00,58,246,Pre-breakfast blood glucose measurement
+208,11-05-1989 08:00,33,010,Regular insulin dose
+209,11-05-1989 12:00,60,0Hi,Pre-lunch blood glucose measurement
+210,11-05-1989 12:00,33,008,Regular insulin dose
+211,11-05-1989 18:00,62,361,Pre-supper blood glucose measurement
+212,11-05-1989 18:00,33,012,Regular insulin dose
+213,11-05-1989 22:00,48,348,Unspecified blood glucose measurement
+214,11-05-1989 22:00,33,018,Regular insulin dose
+215,11-06-1989 08:00,58,262,Pre-breakfast blood glucose measurement
+216,11-06-1989 08:00,33,012,Regular insulin dose
+217,11-06-1989 12:00,60,0Hi,Pre-lunch blood glucose measurement
+218,11-06-1989 12:00,33,008,Regular insulin dose
+219,11-06-1989 18:00,62,330,Pre-supper blood glucose measurement
+220,11-06-1989 18:00,33,012,Regular insulin dose
+221,11-06-1989 22:00,48,0Hi,Unspecified blood glucose measurement
+222,11-06-1989 22:00,33,018,Regular insulin dose
+223,11-07-1989 08:00,58,240,Pre-breakfast blood glucose measurement
+224,11-07-1989 08:00,33,010,Regular insulin dose
+225,11-07-1989 12:00,60,317,Pre-lunch blood glucose measurement
+226,11-07-1989 12:00,33,008,Regular insulin dose
+227,11-07-1989 18:00,62,156,Pre-supper blood glucose measurement
+228,11-07-1989 18:00,33,010,Regular insulin dose
+229,11-07-1989 22:00,48,158,Unspecified blood glucose measurement
+230,11-07-1989 22:00,33,014,Regular insulin dose
+231,11-08-1989 08:00,58,221,Pre-breakfast blood glucose measurement
+232,11-08-1989 08:00,33,010,Regular insulin dose
+233,11-08-1989 12:00,60,225,Pre-lunch blood glucose measurement
+234,11-08-1989 12:00,33,004,Regular insulin dose
+235,11-08-1989 18:00,62,0Lo,Pre-supper blood glucose measurement
+236,11-08-1989 18:00,33,004,Regular insulin dose
+237,11-08-1989 22:00,48,097,Unspecified blood glucose measurement
+238,11-08-1989 22:00,33,010,Regular insulin dose
+239,11-09-1989 08:00,58,225,Pre-breakfast blood glucose measurement
+240,11-09-1989 08:00,33,010,Regular insulin dose
+241,11-09-1989 12:00,60,274,Pre-lunch blood glucose measurement
+242,11-09-1989 12:00,33,008,Regular insulin dose
+243,11-09-1989 18:00,62,175,Pre-supper blood glucose measurement
+244,11-09-1989 18:00,33,010,Regular insulin dose
+245,11-09-1989 22:00,48,147,Unspecified blood glucose measurement
+246,11-09-1989 22:00,33,014,Regular insulin dose
+247,11-10-1989 08:00,58,156,Pre-breakfast blood glucose measurement
+248,11-10-1989 08:00,33,010,Regular insulin dose
+249,11-10-1989 12:00,60,205,Pre-lunch blood glucose measurement
+250,11-10-1989 12:00,33,004,Regular insulin dose
+251,11-10-1989 18:00,62,251,Pre-supper blood glucose measurement
+252,11-10-1989 18:00,33,012,Regular insulin dose
+253,11-10-1989 22:00,48,160,Unspecified blood glucose measurement
+254,11-10-1989 22:00,33,014,Regular insulin dose
+255,11-11-1989 08:00,58,196,Pre-breakfast blood glucose measurement
+256,11-11-1989 08:00,33,010,Regular insulin dose
+257,11-11-1989 12:00,60,097,Pre-lunch blood glucose measurement
+258,11-11-1989 12:00,33,004,Regular insulin dose
+259,11-11-1989 18:00,62,166,Pre-supper blood glucose measurement
+260,11-11-1989 18:00,33,010,Regular insulin dose
+261,11-11-1989 22:00,48,224,Unspecified blood glucose measurement
+262,11-11-1989 22:00,33,014,Regular insulin dose
+263,11-12-1989 08:00,58,269,Pre-breakfast blood glucose measurement
+264,11-12-1989 08:00,33,010,Regular insulin dose
+265,11-12-1989 12:00,60,167,Pre-lunch blood glucose measurement
+266,11-12-1989 12:00,33,004,Regular insulin dose
+267,11-12-1989 18:00,62,251,Pre-supper blood glucose measurement
+268,11-12-1989 18:00,33,012,Regular insulin dose
+269,11-12-1989 22:00,48,279,Unspecified blood glucose measurement
+270,11-12-1989 22:00,33,014,Regular insulin dose
+271,11-13-1989 08:00,58,303,Pre-breakfast blood glucose measurement
+272,11-13-1989 08:00,33,014,Regular insulin dose
+273,11-13-1989 12:00,60,249,Pre-lunch blood glucose measurement
+274,11-13-1989 12:00,33,006,Regular insulin dose
+275,11-13-1989 18:00,62,117,Pre-supper blood glucose measurement
+276,11-13-1989 18:00,33,010,Regular insulin dose
+277,11-13-1989 22:00,48,222,Unspecified blood glucose measurement
+278,11-13-1989 22:00,33,014,Regular insulin dose
+279,11-14-1989 08:00,58,104,Pre-breakfast blood glucose measurement
+280,11-14-1989 08:00,33,010,Regular insulin dose
+281,11-14-1989 12:00,60,055,Pre-lunch blood glucose measurement
+282,11-14-1989 12:00,33,004,Regular insulin dose
+283,11-14-1989 18:00,62,193,Pre-supper blood glucose measurement
+284,11-14-1989 18:00,33,010,Regular insulin dose
+285,11-14-1989 22:00,48,264,Unspecified blood glucose measurement
+286,11-14-1989 22:00,33,016,Regular insulin dose
+287,11-15-1989 08:00,58,195,Pre-breakfast blood glucose measurement
+288,11-15-1989 08:00,33,010,Regular insulin dose
+289,11-15-1989 12:00,60,249,Pre-lunch blood glucose measurement
+290,11-15-1989 12:00,33,006,Regular insulin dose
+291,11-15-1989 18:00,62,153,Pre-supper blood glucose measurement
+292,11-15-1989 18:00,33,010,Regular insulin dose
+293,11-15-1989 22:00,48,092,Unspecified blood glucose measurement
+294,11-15-1989 22:00,33,010,Regular insulin dose
+295,11-16-1989 08:00,58,125,Pre-breakfast blood glucose measurement
+296,11-16-1989 08:00,33,010,Regular insulin dose
+297,11-16-1989 12:00,60,160,Pre-lunch blood glucose measurement
+298,11-16-1989 12:00,33,004,Regular insulin dose
+299,11-16-1989 18:00,62,292,Pre-supper blood glucose measurement
+300,11-16-1989 18:00,33,012,Regular insulin dose
+301,11-16-1989 22:00,48,183,Unspecified blood glucose measurement
+302,11-16-1989 22:00,33,014,Regular insulin dose
+303,11-17-1989 08:00,58,137,Pre-breakfast blood glucose measurement
+304,11-17-1989 08:00,33,010,Regular insulin dose
+305,11-17-1989 12:00,60,086,Pre-lunch blood glucose measurement
+306,11-17-1989 12:00,33,004,Regular insulin dose
+307,11-17-1989 18:00,62,281,Pre-supper blood glucose measurement
+308,11-17-1989 18:00,33,012,Regular insulin dose
+309,11-17-1989 22:00,48,105,Unspecified blood glucose measurement
+310,11-17-1989 22:00,33,014,Regular insulin dose
+311,11-18-1989 08:00,58,088,Pre-breakfast blood glucose measurement
+312,11-18-1989 08:00,33,010,Regular insulin dose
+313,11-18-1989 12:00,60,061,Pre-lunch blood glucose measurement
+314,11-18-1989 12:00,33,004,Regular insulin dose
+315,11-18-1989 18:00,62,178,Pre-supper blood glucose measurement
+316,11-18-1989 18:00,33,010,Regular insulin dose
+317,11-18-1989 22:00,48,348,Unspecified blood glucose measurement
+318,11-18-1989 22:00,33,018,Regular insulin dose
+319,11-19-1989 08:00,58,252,Pre-breakfast blood glucose measurement
+320,11-19-1989 08:00,33,012,Regular insulin dose
+321,11-19-1989 12:00,60,066,Pre-lunch blood glucose measurement
+322,11-19-1989 12:00,33,004,Regular insulin dose
+323,11-19-1989 18:00,62,217,Pre-supper blood glucose measurement
+324,11-19-1989 18:00,33,010,Regular insulin dose
+325,11-19-1989 22:00,48,191,Unspecified blood glucose measurement
+326,11-19-1989 22:00,33,014,Regular insulin dose
+327,11-20-1989 08:00,58,173,Pre-breakfast blood glucose measurement
+328,11-20-1989 08:00,33,010,Regular insulin dose
+329,11-20-1989 12:00,60,057,Pre-lunch blood glucose measurement
+330,11-20-1989 12:00,33,004,Regular insulin dose
+331,11-20-1989 18:00,62,195,Pre-supper blood glucose measurement
+332,11-20-1989 18:00,33,010,Regular insulin dose
+333,11-20-1989 22:00,48,209,Unspecified blood glucose measurement
+334,11-20-1989 22:00,33,014,Regular insulin dose
+335,11-21-1989 08:00,58,239,Pre-breakfast blood glucose measurement
+336,11-21-1989 08:00,33,010,Regular insulin dose
+337,11-21-1989 12:00,60,235,Pre-lunch blood glucose measurement
+338,11-21-1989 12:00,33,006,Regular insulin dose
+339,11-21-1989 18:00,62,173,Pre-supper blood glucose measurement
+340,11-21-1989 18:00,33,010,Regular insulin dose
+341,11-21-1989 22:00,48,142,Unspecified blood glucose measurement
+342,11-21-1989 22:00,33,014,Regular insulin dose
+343,11-22-1989 08:00,58,326,Pre-breakfast blood glucose measurement
+344,11-22-1989 08:00,33,014,Regular insulin dose
+345,11-22-1989 12:00,60,263,Pre-lunch blood glucose measurement
+346,11-22-1989 12:00,33,006,Regular insulin dose
+347,11-22-1989 18:00,62,140,Pre-supper blood glucose measurement
+348,11-22-1989 18:00,33,010,Regular insulin dose
+349,11-22-1989 22:00,48,169,Unspecified blood glucose measurement
+350,11-22-1989 22:00,33,014,Regular insulin dose
+351,11-23-1989 08:00,58,224,Pre-breakfast blood glucose measurement
+352,11-23-1989 08:00,33,014,Regular insulin dose
+353,11-23-1989 12:00,60,247,Pre-lunch blood glucose measurement
+354,11-23-1989 12:00,33,004,Regular insulin dose
+355,11-23-1989 18:00,62,192,Pre-supper blood glucose measurement
+356,11-23-1989 18:00,33,010,Regular insulin dose
+357,11-24-1989 08:00,58,307,Pre-breakfast blood glucose measurement
+358,11-24-1989 08:00,33,012,Regular insulin dose
+359,11-24-1989 12:00,60,208,Pre-lunch blood glucose measurement
+360,11-24-1989 12:00,33,004,Regular insulin dose
+361,11-24-1989 18:00,62,300,Pre-supper blood glucose measurement
+362,11-24-1989 18:00,33,014,Regular insulin dose
+363,11-24-1989 22:00,48,364,Unspecified blood glucose measurement
+364,11-24-1989 22:00,33,018,Regular insulin dose
+365,11-25-1989 08:00,58,253,Pre-breakfast blood glucose measurement
+366,11-25-1989 08:00,33,010,Regular insulin dose
+367,11-25-1989 12:00,60,254,Pre-lunch blood glucose measurement
+368,11-25-1989 12:00,33,006,Regular insulin dose
+369,11-25-1989 18:00,62,273,Pre-supper blood glucose measurement
+370,11-25-1989 18:00,33,012,Regular insulin dose
+371,11-25-1989 22:00,48,276,Unspecified blood glucose measurement
+372,11-25-1989 22:00,33,016,Regular insulin dose
+373,11-26-1989 08:00,58,285,Pre-breakfast blood glucose measurement
+374,11-26-1989 08:00,33,012,Regular insulin dose
+375,11-26-1989 12:00,60,238,Pre-lunch blood glucose measurement
+376,11-26-1989 12:00,33,004,Regular insulin dose
+377,11-26-1989 18:00,62,226,Pre-supper blood glucose measurement
+378,11-26-1989 18:00,33,010,Regular insulin dose
+379,11-26-1989 22:00,48,279,Unspecified blood glucose measurement
+380,11-26-1989 22:00,33,016,Regular insulin dose
+381,11-27-1989 08:00,58,285,Pre-breakfast blood glucose measurement
+382,11-27-1989 08:00,33,012,Regular insulin dose
+383,11-27-1989 12:00,60,108,Pre-lunch blood glucose measurement
+384,11-27-1989 12:00,33,004,Regular insulin dose
+385,11-27-1989 18:00,62,209,Pre-supper blood glucose measurement
+386,11-27-1989 18:00,33,010,Regular insulin dose
+387,11-27-1989 22:00,48,197,Unspecified blood glucose measurement
+388,11-27-1989 22:00,33,014,Regular insulin dose
+389,11-28-1989 08:00,58,144,Pre-breakfast blood glucose measurement
+390,11-28-1989 08:00,33,010,Regular insulin dose
+391,11-28-1989 12:00,60,133,Pre-lunch blood glucose measurement
+392,11-28-1989 12:00,33,004,Regular insulin dose
+393,11-28-1989 18:00,62,053,Pre-supper blood glucose measurement
+394,11-28-1989 18:00,33,010,Regular insulin dose
+395,11-28-1989 22:00,48,101,Unspecified blood glucose measurement
+396,11-28-1989 22:00,33,011,Regular insulin dose
+397,11-29-1989 08:00,58,282,Pre-breakfast blood glucose measurement
+398,11-29-1989 08:00,33,012,Regular insulin dose
+399,11-29-1989 12:00,60,192,Pre-lunch blood glucose measurement
+400,11-29-1989 12:00,33,004,Regular insulin dose
+401,11-29-1989 18:00,62,344,Pre-supper blood glucose measurement
+402,11-29-1989 18:00,33,010,Regular insulin dose
+403,11-29-1989 22:00,48,245,Unspecified blood glucose measurement
+404,11-29-1989 22:00,33,016,Regular insulin dose
+405,11-30-1989 08:00,58,191,Pre-breakfast blood glucose measurement
+406,11-30-1989 08:00,33,010,Regular insulin dose
+407,11-30-1989 12:00,60,071,Pre-lunch blood glucose measurement
+408,11-30-1989 12:00,33,004,Regular insulin dose
+409,11-30-1989 18:00,62,254,Pre-supper blood glucose measurement
+410,11-30-1989 18:00,33,012,Regular insulin dose
+411,11-30-1989 22:00,48,193,Unspecified blood glucose measurement
+412,11-30-1989 22:00,33,014,Regular insulin dose
+413,12-01-1989 08:00,58,185,Pre-breakfast blood glucose measurement
+414,12-01-1989 08:00,33,010,Regular insulin dose
+415,12-01-1989 12:00,60,161,Pre-lunch blood glucose measurement
+416,12-01-1989 12:00,33,004,Regular insulin dose
+417,12-01-1989 18:00,62,179,Pre-supper blood glucose measurement
+418,12-01-1989 18:00,33,010,Regular insulin dose
+419,12-01-1989 22:00,48,203,Unspecified blood glucose measurement
+420,12-01-1989 22:00,33,014,Regular insulin dose
+421,12-02-1989 08:00,58,216,Pre-breakfast blood glucose measurement
+422,12-02-1989 08:00,33,010,Regular insulin dose
+423,12-02-1989 12:00,60,275,Pre-lunch blood glucose measurement
+424,12-02-1989 12:00,33,006,Regular insulin dose
+425,12-02-1989 18:00,62,065,Pre-supper blood glucose measurement
+426,12-02-1989 18:00,33,010,Regular insulin dose
+427,12-02-1989 22:00,48,121,Unspecified blood glucose measurement
+428,12-02-1989 22:00,33,010,Regular insulin dose
+429,12-03-1989 08:00,58,163,Pre-breakfast blood glucose measurement
+430,12-03-1989 08:00,33,010,Regular insulin dose
+431,12-03-1989 12:00,60,169,Pre-lunch blood glucose measurement
+432,12-03-1989 12:00,33,004,Regular insulin dose
+433,12-03-1989 18:00,62,067,Pre-supper blood glucose measurement
+434,12-03-1989 18:00,33,010,Regular insulin dose
+435,12-03-1989 22:00,48,161,Unspecified blood glucose measurement
+436,12-03-1989 22:00,33,014,Regular insulin dose
+437,12-04-1989 08:00,58,106,Pre-breakfast blood glucose measurement
+438,12-04-1989 08:00,33,010,Regular insulin dose
+439,12-04-1989 12:00,60,056,Pre-lunch blood glucose measurement
+440,12-04-1989 12:00,33,004,Regular insulin dose
+441,12-04-1989 18:00,62,072,Pre-supper blood glucose measurement
+442,12-04-1989 18:00,33,010,Regular insulin dose
+443,12-04-1989 22:00,48,143,Unspecified blood glucose measurement
+444,12-04-1989 22:00,33,014,Regular insulin dose
+445,12-05-1989 08:00,58,119,Pre-breakfast blood glucose measurement
+446,12-05-1989 08:00,33,010,Regular insulin dose
+447,12-05-1989 12:00,60,053,Pre-lunch blood glucose measurement
+448,12-05-1989 12:00,33,004,Regular insulin dose
+449,12-05-1989 18:00,62,176,Pre-supper blood glucose measurement
+450,12-05-1989 18:00,33,010,Regular insulin dose
+451,12-05-1989 22:00,48,284,Unspecified blood glucose measurement
+452,12-05-1989 22:00,33,016,Regular insulin dose
+453,12-06-1989 08:00,58,302,Pre-breakfast blood glucose measurement
+454,12-06-1989 08:00,33,012,Regular insulin dose
+455,12-06-1989 12:00,60,134,Pre-lunch blood glucose measurement
+456,12-06-1989 12:00,33,004,Regular insulin dose
+457,12-06-1989 18:00,62,164,Pre-supper blood glucose measurement
+458,12-06-1989 18:00,33,010,Regular insulin dose
+459,12-06-1989 22:00,48,065,Unspecified blood glucose measurement
+460,12-06-1989 22:00,33,010,Regular insulin dose
+461,12-07-1989 08:00,58,110,Pre-breakfast blood glucose measurement
+462,12-07-1989 08:00,33,010,Regular insulin dose
+463,12-07-1989 12:00,60,049,Pre-lunch blood glucose measurement
+464,12-07-1989 12:00,33,004,Regular insulin dose
+465,12-07-1989 18:00,62,206,Pre-supper blood glucose measurement
+466,12-07-1989 18:00,33,010,Regular insulin dose
+467,12-07-1989 22:00,48,252,Unspecified blood glucose measurement
+468,12-07-1989 22:00,33,016,Regular insulin dose
+469,12-08-1989 08:00,58,154,Pre-breakfast blood glucose measurement
+470,12-08-1989 08:00,33,010,Regular insulin dose
+471,12-08-1989 12:00,60,138,Pre-lunch blood glucose measurement
+472,12-08-1989 12:00,33,004,Regular insulin dose
+473,12-08-1989 18:00,62,180,Pre-supper blood glucose measurement
+474,12-08-1989 18:00,33,010,Regular insulin dose
+475,12-08-1989 22:00,48,224,Unspecified blood glucose measurement
+476,12-08-1989 22:00,33,014,Regular insulin dose
+477,12-09-1989 08:00,58,228,Pre-breakfast blood glucose measurement
+478,12-09-1989 08:00,33,010,Regular insulin dose
+479,12-09-1989 12:00,60,052,Pre-lunch blood glucose measurement
+480,12-09-1989 12:00,33,004,Regular insulin dose
+481,12-09-1989 18:00,62,203,Pre-supper blood glucose measurement
+482,12-09-1989 18:00,33,010,Regular insulin dose
+483,12-09-1989 22:00,48,249,Unspecified blood glucose measurement
+484,12-09-1989 22:00,33,014,Regular insulin dose
+485,12-10-1989 08:00,58,190,Pre-breakfast blood glucose measurement
+486,12-10-1989 08:00,33,010,Regular insulin dose
+487,12-10-1989 12:00,60,222,Pre-lunch blood glucose measurement
+488,12-10-1989 12:00,33,004,Regular insulin dose
+489,12-10-1989 18:00,62,117,Pre-supper blood glucose measurement
+490,12-10-1989 18:00,33,010,Regular insulin dose
+491,12-10-1989 22:00,48,175,Unspecified blood glucose measurement
+492,12-10-1989 22:00,33,014,Regular insulin dose
+493,12-11-1989 08:00,58,155,Pre-breakfast blood glucose measurement
+494,12-11-1989 08:00,33,010,Regular insulin dose
+495,12-11-1989 12:00,60,069,Pre-lunch blood glucose measurement
+496,12-11-1989 12:00,33,004,Regular insulin dose
+497,12-11-1989 18:00,62,155,Pre-supper blood glucose measurement
+498,12-11-1989 18:00,33,010,Regular insulin dose
+499,12-11-1989 22:00,48,159,Unspecified blood glucose measurement
+500,12-11-1989 22:00,33,014,Regular insulin dose
+501,12-12-1989 08:00,58,275,Pre-breakfast blood glucose measurement
+502,12-12-1989 08:00,33,012,Regular insulin dose
+503,12-12-1989 12:00,60,265,Pre-lunch blood glucose measurement
+504,12-12-1989 12:00,33,006,Regular insulin dose
+505,12-12-1989 18:00,62,093,Pre-supper blood glucose measurement
+506,12-12-1989 18:00,33,006,Regular insulin dose
+507,12-12-1989 22:00,48,346,Unspecified blood glucose measurement
+508,12-12-1989 22:00,33,018,Regular insulin dose
+509,12-13-1989 08:00,58,288,Pre-breakfast blood glucose measurement
+510,12-13-1989 08:00,33,012,Regular insulin dose
+511,12-13-1989 12:00,60,187,Pre-lunch blood glucose measurement
+512,12-13-1989 12:00,33,010,Regular insulin dose
+513,12-13-1989 18:00,62,072,Pre-supper blood glucose measurement
+514,12-13-1989 18:00,33,010,Regular insulin dose
+515,12-13-1989 22:00,48,109,Unspecified blood glucose measurement
+516,12-13-1989 22:00,33,014,Regular insulin dose
+517,12-14-1989 08:00,58,125,Pre-breakfast blood glucose measurement
+518,12-14-1989 08:00,33,010,Regular insulin dose
+519,12-14-1989 12:00,60,036,Pre-lunch blood glucose measurement
+520,12-14-1989 12:00,33,004,Regular insulin dose
+521,12-14-1989 18:00,62,305,Pre-supper blood glucose measurement
+522,12-14-1989 18:00,33,014,Regular insulin dose
+523,12-14-1989 22:00,48,255,Unspecified blood glucose measurement
+524,12-14-1989 22:00,33,014,Regular insulin dose
+525,12-15-1989 08:00,58,180,Pre-breakfast blood glucose measurement
+526,12-15-1989 08:00,33,010,Regular insulin dose
+527,12-15-1989 12:00,60,126,Pre-lunch blood glucose measurement
+528,12-15-1989 12:00,33,004,Regular insulin dose
+529,12-15-1989 18:00,62,243,Pre-supper blood glucose measurement
+530,12-15-1989 18:00,33,014,Regular insulin dose
+531,12-15-1989 22:00,48,240,Unspecified blood glucose measurement
+532,12-15-1989 22:00,33,014,Regular insulin dose
+533,12-16-1989 08:00,58,219,Pre-breakfast blood glucose measurement
+534,12-16-1989 08:00,33,010,Regular insulin dose
+535,12-16-1989 12:00,60,198,Pre-lunch blood glucose measurement
+536,12-16-1989 12:00,33,006,Regular insulin dose
+537,12-16-1989 18:00,62,257,Pre-supper blood glucose measurement
+538,12-16-1989 18:00,33,012,Regular insulin dose
+539,12-16-1989 22:00,48,260,Unspecified blood glucose measurement
+540,12-16-1989 22:00,33,016,Regular insulin dose
+541,12-17-1989 08:00,58,162,Pre-breakfast blood glucose measurement
+542,12-17-1989 08:00,33,010,Regular insulin dose
+543,12-17-1989 12:00,60,144,Pre-lunch blood glucose measurement
+544,12-17-1989 12:00,33,004,Regular insulin dose
+545,12-17-1989 18:00,62,171,Pre-supper blood glucose measurement
+546,12-17-1989 18:00,33,010,Regular insulin dose
+547,12-17-1989 22:00,48,199,Unspecified blood glucose measurement
+548,12-17-1989 22:00,33,014,Regular insulin dose
+549,12-18-1989 08:00,58,236,Pre-breakfast blood glucose measurement
+550,12-18-1989 08:00,33,010,Regular insulin dose
+551,12-18-1989 12:00,60,139,Pre-lunch blood glucose measurement
+552,12-18-1989 12:00,33,004,Regular insulin dose
+553,12-18-1989 18:00,62,190,Pre-supper blood glucose measurement
+554,12-18-1989 18:00,33,010,Regular insulin dose
+555,12-18-1989 22:00,48,264,Unspecified blood glucose measurement
+556,12-18-1989 22:00,33,016,Regular insulin dose
+557,12-19-1989 08:00,58,255,Pre-breakfast blood glucose measurement
+558,12-19-1989 08:00,33,010,Regular insulin dose
+559,12-19-1989 12:00,60,311,Pre-lunch blood glucose measurement
+560,12-19-1989 12:00,33,008,Regular insulin dose
+561,12-19-1989 18:00,62,128,Pre-supper blood glucose measurement
+562,12-19-1989 18:00,34,006,NPH insulin dose
+563,12-19-1989 22:00,48,315,Unspecified blood glucose measurement
+564,12-19-1989 22:00,33,016,Regular insulin dose
+565,12-20-1989 08:00,58,109,Pre-breakfast blood glucose measurement
+566,12-20-1989 08:00,33,010,Regular insulin dose
+567,12-20-1989 12:00,60,074,Pre-lunch blood glucose measurement
+568,12-20-1989 12:00,33,004,Regular insulin dose
+569,12-20-1989 18:00,62,356,Pre-supper blood glucose measurement
+570,12-20-1989 18:00,33,014,Regular insulin dose
+571,12-20-1989 22:00,48,168,Unspecified blood glucose measurement
+572,12-20-1989 22:00,33,014,Regular insulin dose
+573,12-21-1989 08:00,58,237,Pre-breakfast blood glucose measurement
+574,12-21-1989 08:00,33,010,Regular insulin dose
+575,12-21-1989 12:00,60,177,Pre-lunch blood glucose measurement
+576,12-21-1989 12:00,33,004,Regular insulin dose
+577,12-21-1989 18:00,62,196,Pre-supper blood glucose measurement
+578,12-21-1989 18:00,33,010,Regular insulin dose
+579,12-21-1989 22:00,48,210,Unspecified blood glucose measurement
+580,12-21-1989 22:00,33,014,Regular insulin dose
+581,12-22-1989 08:00,58,109,Pre-breakfast blood glucose measurement
+582,12-22-1989 08:00,33,010,Regular insulin dose
+583,12-22-1989 12:00,60,040,Pre-lunch blood glucose measurement
+584,12-22-1989 12:00,33,004,Regular insulin dose
+585,12-22-1989 18:00,62,272,Pre-supper blood glucose measurement
+586,12-22-1989 18:00,33,012,Regular insulin dose
+587,12-22-1989 22:00,48,222,Unspecified blood glucose measurement
+588,12-22-1989 22:00,33,014,Regular insulin dose
+589,12-23-1989 08:00,58,168,Pre-breakfast blood glucose measurement
+590,12-23-1989 08:00,33,010,Regular insulin dose
+591,12-23-1989 12:00,60,143,Pre-lunch blood glucose measurement
+592,12-23-1989 12:00,33,004,Regular insulin dose
+593,12-23-1989 18:00,62,099,Pre-supper blood glucose measurement
+594,12-23-1989 18:00,33,010,Regular insulin dose
+595,12-23-1989 22:00,48,113,Unspecified blood glucose measurement
+596,12-23-1989 22:00,33,014,Regular insulin dose
+597,12-24-1989 08:00,58,114,Pre-breakfast blood glucose measurement
+598,12-24-1989 08:00,33,010,Regular insulin dose
+599,12-24-1989 12:00,60,080,Pre-lunch blood glucose measurement
+600,12-24-1989 12:00,33,004,Regular insulin dose
+601,12-24-1989 18:00,62,143,Pre-supper blood glucose measurement
+602,12-24-1989 18:00,33,010,Regular insulin dose
+603,12-24-1989 22:00,48,129,Unspecified blood glucose measurement
+604,12-24-1989 22:00,33,014,Regular insulin dose
+605,12-25-1989 08:00,58,161,Pre-breakfast blood glucose measurement
+606,12-25-1989 08:00,33,010,Regular insulin dose
+607,12-25-1989 12:00,60,075,Pre-lunch blood glucose measurement
+608,12-25-1989 12:00,33,004,Regular insulin dose
+609,12-25-1989 18:00,62,074,Pre-supper blood glucose measurement
+610,12-25-1989 18:00,33,004,Regular insulin dose
+611,12-25-1989 22:00,48,0Hi,Unspecified blood glucose measurement
+612,12-25-1989 22:00,33,016,Regular insulin dose
+613,12-26-1989 08:00,58,185,Pre-breakfast blood glucose measurement
+614,12-26-1989 08:00,33,010,Regular insulin dose
+615,12-26-1989 12:00,60,118,Pre-lunch blood glucose measurement
+616,12-26-1989 12:00,33,004,Regular insulin dose
+617,12-26-1989 18:00,62,194,Pre-supper blood glucose measurement
+618,12-26-1989 18:00,33,010,Regular insulin dose
+619,12-26-1989 22:00,48,215,Unspecified blood glucose measurement
+620,12-26-1989 22:00,33,014,Regular insulin dose
+621,12-27-1989 08:00,58,306,Pre-breakfast blood glucose measurement
+622,12-27-1989 08:00,33,012,Regular insulin dose
+623,12-27-1989 12:00,60,248,Pre-lunch blood glucose measurement
+624,12-27-1989 12:00,33,006,Regular insulin dose
+625,12-27-1989 18:00,62,251,Pre-supper blood glucose measurement
+626,12-27-1989 18:00,33,012,Regular insulin dose
+627,12-27-1989 22:00,48,339,Unspecified blood glucose measurement
+628,12-27-1989 22:00,33,018,Regular insulin dose
+629,12-28-1989 08:00,58,215,Pre-breakfast blood glucose measurement
+630,12-28-1989 08:00,33,010,Regular insulin dose
+631,12-28-1989 12:00,60,049,Pre-lunch blood glucose measurement
+632,12-28-1989 12:00,33,004,Regular insulin dose
+633,12-28-1989 18:00,62,155,Pre-supper blood glucose measurement
+634,12-28-1989 18:00,33,010,Regular insulin dose
+635,12-28-1989 22:00,48,115,Unspecified blood glucose measurement
+636,12-28-1989 22:00,33,014,Regular insulin dose
+637,12-29-1989 08:00,58,132,Pre-breakfast blood glucose measurement
+638,12-29-1989 08:00,33,010,Regular insulin dose
+639,12-29-1989 12:00,60,187,Pre-lunch blood glucose measurement
+640,12-29-1989 12:00,33,004,Regular insulin dose
+641,12-29-1989 18:00,62,107,Pre-supper blood glucose measurement
+642,12-29-1989 18:00,33,010,Regular insulin dose
+643,12-29-1989 22:00,48,185,Unspecified blood glucose measurement
+644,12-29-1989 22:00,33,014,Regular insulin dose
+645,12-30-1989 08:00,58,241,Pre-breakfast blood glucose measurement
+646,12-30-1989 08:00,33,010,Regular insulin dose
+647,12-30-1989 12:00,60,243,Pre-lunch blood glucose measurement
+648,12-30-1989 12:00,33,006,Regular insulin dose
+649,12-30-1989 18:00,62,117,Pre-supper blood glucose measurement
+650,12-30-1989 18:00,33,010,Regular insulin dose
+651,12-30-1989 22:00,48,095,Unspecified blood glucose measurement
+652,12-30-1989 22:00,33,010,Regular insulin dose
+653,12-31-1989 08:00,58,253,Pre-breakfast blood glucose measurement
+654,12-31-1989 08:00,33,012,Regular insulin dose
+655,12-31-1989 12:00,60,264,Pre-lunch blood glucose measurement
+656,12-31-1989 12:00,33,006,Regular insulin dose
+657,12-31-1989 18:00,62,160,Pre-supper blood glucose measurement
+658,12-31-1989 18:00,33,010,Regular insulin dose
+659,12-31-1989 22:00,48,201,Unspecified blood glucose measurement
+660,12-31-1989 22:00,33,014,Regular insulin dose
+661,01-01-1990 08:00,58,183,Pre-breakfast blood glucose measurement
+662,01-01-1990 08:00,33,010,Regular insulin dose
+663,01-01-1990 12:00,60,245,Pre-lunch blood glucose measurement
+664,01-01-1990 12:00,33,006,Regular insulin dose
+665,01-01-1990 18:00,62,098,Pre-supper blood glucose measurement
+666,01-01-1990 18:00,33,010,Regular insulin dose
+667,01-01-1990 22:00,48,134,Unspecified blood glucose measurement
+668,01-01-1990 22:00,33,014,Regular insulin dose
+669,01-02-1990 08:00,58,247,Pre-breakfast blood glucose measurement
+670,01-02-1990 08:00,33,010,Regular insulin dose
+671,01-02-1990 12:00,60,266,Pre-lunch blood glucose measurement
+672,01-02-1990 12:00,33,006,Regular insulin dose
+673,01-02-1990 18:00,62,091,Pre-supper blood glucose measurement
+674,01-02-1990 18:00,33,010,Regular insulin dose
+675,01-02-1990 22:00,48,152,Unspecified blood glucose measurement
+676,01-02-1990 22:00,33,014,Regular insulin dose
+677,01-03-1990 08:00,58,176,Pre-breakfast blood glucose measurement
+678,01-03-1990 08:00,33,010,Regular insulin dose
+679,01-03-1990 12:00,60,254,Pre-lunch blood glucose measurement
+680,01-03-1990 12:00,33,006,Regular insulin dose
+681,01-03-1990 18:00,62,109,Pre-supper blood glucose measurement
+682,01-03-1990 18:00,33,010,Regular insulin dose
+683,01-03-1990 22:00,48,147,Unspecified blood glucose measurement
+684,01-03-1990 22:00,33,014,Regular insulin dose
+685,01-04-1990 08:00,58,204,Pre-breakfast blood glucose measurement
+686,01-04-1990 08:00,33,010,Regular insulin dose
+687,01-04-1990 12:00,60,141,Pre-lunch blood glucose measurement
+688,01-04-1990 12:00,33,004,Regular insulin dose
+689,01-04-1990 18:00,62,181,Pre-supper blood glucose measurement
+690,01-04-1990 18:00,33,010,Regular insulin dose
+691,01-04-1990 22:00,48,170,Unspecified blood glucose measurement
+692,01-04-1990 22:00,33,014,Regular insulin dose
+693,01-05-1990 08:00,58,217,Pre-breakfast blood glucose measurement
+694,01-05-1990 08:00,33,010,Regular insulin dose
+695,01-05-1990 12:00,60,187,Pre-lunch blood glucose measurement
+696,01-05-1990 12:00,33,004,Regular insulin dose
+697,01-05-1990 18:00,62,236,Pre-supper blood glucose measurement
+698,01-05-1990 18:00,33,010,Regular insulin dose
+699,01-05-1990 22:00,48,186,Unspecified blood glucose measurement
+700,01-05-1990 22:00,33,014,Regular insulin dose
+701,01-06-1990 08:00,58,262,Pre-breakfast blood glucose measurement
+702,01-06-1990 08:00,33,010,Regular insulin dose
+703,01-06-1990 12:00,60,195,Pre-lunch blood glucose measurement
+704,01-06-1990 12:00,33,004,Regular insulin dose
+705,01-06-1990 18:00,62,311,Pre-supper blood glucose measurement
+706,01-06-1990 18:00,33,012,Regular insulin dose
+707,01-06-1990 22:00,48,278,Unspecified blood glucose measurement
+708,01-06-1990 22:00,33,014,Regular insulin dose
+709,01-07-1990 08:00,58,273,Pre-breakfast blood glucose measurement
+710,01-07-1990 08:00,33,014,Regular insulin dose
+711,01-07-1990 12:00,60,210,Pre-lunch blood glucose measurement
+712,01-07-1990 12:00,33,004,Regular insulin dose
+713,01-07-1990 18:00,62,311,Pre-supper blood glucose measurement
+714,01-07-1990 18:00,33,012,Regular insulin dose
+715,01-07-1990 22:00,48,225,Unspecified blood glucose measurement
+716,01-07-1990 22:00,33,014,Regular insulin dose
+717,01-08-1990 08:00,58,101,Pre-breakfast blood glucose measurement
+718,01-08-1990 08:00,33,010,Regular insulin dose
+719,01-08-1990 12:00,60,089,Pre-lunch blood glucose measurement
+720,01-08-1990 12:00,33,004,Regular insulin dose
+721,01-08-1990 18:00,62,125,Pre-supper blood glucose measurement
+722,01-08-1990 18:00,33,010,Regular insulin dose
+723,01-08-1990 22:00,48,211,Unspecified blood glucose measurement
+724,01-08-1990 22:00,33,014,Regular insulin dose
+725,01-09-1990 08:00,58,137,Pre-breakfast blood glucose measurement
+726,01-09-1990 08:00,33,010,Regular insulin dose
+727,01-09-1990 12:00,60,160,Pre-lunch blood glucose measurement
+728,01-09-1990 12:00,33,004,Regular insulin dose
+729,01-09-1990 18:00,62,285,Pre-supper blood glucose measurement
+730,01-09-1990 18:00,33,012,Regular insulin dose
+731,01-09-1990 22:00,48,209,Unspecified blood glucose measurement
+732,01-09-1990 22:00,33,014,Regular insulin dose
+733,01-10-1990 08:00,58,271,Pre-breakfast blood glucose measurement
+734,01-10-1990 08:00,33,012,Regular insulin dose
+735,01-10-1990 12:00,60,158,Pre-lunch blood glucose measurement
+736,01-10-1990 12:00,33,004,Regular insulin dose
+737,01-10-1990 18:00,62,263,Pre-supper blood glucose measurement
+738,01-10-1990 18:00,33,012,Regular insulin dose
+739,01-10-1990 22:00,48,221,Unspecified blood glucose measurement
+740,01-10-1990 22:00,33,014,Regular insulin dose
+741,01-11-1990 08:00,58,226,Pre-breakfast blood glucose measurement
+742,01-11-1990 08:00,33,010,Regular insulin dose
+743,01-11-1990 12:00,60,167,Pre-lunch blood glucose measurement
+744,01-11-1990 12:00,33,004,Regular insulin dose
+745,01-11-1990 18:00,62,205,Pre-supper blood glucose measurement
+746,01-11-1990 18:00,33,010,Regular insulin dose
+747,01-11-1990 22:00,48,191,Unspecified blood glucose measurement
+748,01-11-1990 22:00,33,014,Regular insulin dose
+749,01-12-1990 08:00,58,156,Pre-breakfast blood glucose measurement
+750,01-12-1990 08:00,33,010,Regular insulin dose
+751,01-12-1990 12:00,60,138,Pre-lunch blood glucose measurement
+752,01-12-1990 12:00,33,004,Regular insulin dose
+753,01-12-1990 18:00,62,190,Pre-supper blood glucose measurement
+754,01-12-1990 18:00,33,010,Regular insulin dose
+755,01-12-1990 22:00,48,301,Unspecified blood glucose measurement
+756,01-12-1990 22:00,33,016,Regular insulin dose
+757,01-13-1990 08:00,58,272,Pre-breakfast blood glucose measurement
+758,01-13-1990 08:00,33,012,Regular insulin dose
+759,01-13-1990 12:00,60,388,Pre-lunch blood glucose measurement
+760,01-13-1990 12:00,33,006,Regular insulin dose
