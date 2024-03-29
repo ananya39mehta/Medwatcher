@@ -17,7 +17,9 @@ def patients():
             st.write("### Glucose Data:")
             st.write(glucose_data)
             st.write("### Glucose Graph:")
-            st.line_chart(glucose_data.set_index('Date')['Glucose'])
+            st.line_chart(glucose_data.set_index('Date')['Glucose'], x='Time')
 
         else:
             st.error("Patient ID not found.")
+
+patients()
