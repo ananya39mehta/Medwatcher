@@ -68,6 +68,10 @@ def home():
     st.write("Welcome to MedWatcher!")
     st.write("Please navigate using the sidebar.")
 
+    # Add your text data here
+    st.write("<div style='color:black'>Your black colored text goes here.</div>", unsafe_allow_html=True)
+
+
 class MultiApp:
     def __init__(self):
         self.apps = []
