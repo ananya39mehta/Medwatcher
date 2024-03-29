@@ -9,29 +9,21 @@ PASSWORD = "admin"
 
 # Custom CSS styles
 st.markdown(
-    f"""
+    """
     <style>
-    .stTextInput>div>div>input {{
+    .stApp {
+        background-color: #f0f2f6;
+    }
+    .stTextInput>div>div>input {
         background-color: #ffffff;
-    }}
-    .stButton>button {{
+    }
+    .stButton>button {
         background-color: #02ab21;
         color: white;
-    }}
-    .stButton>button:hover {{
+    }
+    .stButton>button:hover {
         background-color: #028c19;
-    }}
-    .background-image {{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("https://gov-web-sing.s3.ap-southeast-1.amazonaws.com/uploads/2023/1/Wordpress-featured-images-48-1672795987342.jpg");
-        background-size: cover;
-        opacity: 0.5; /* Adjust the opacity value here (0.5 for 50% opacity) */
-        z-index: -1; /* Ensure the background image is behind other content */
-    }}
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -42,12 +34,25 @@ def login():
         st.session_state.logged_in = False
 
     if not st.session_state.logged_in:
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background-image: url("https://gov-web-sing.s3.ap-southeast-1.amazonaws.com/uploads/2023/1/Wordpress-featured-images-48-1672795987342.jpg");
+                background-attachment: fixed;
+                background-size: cover;
+                opacity: 0.5; /* Adjust the opacity value here (0.8 for 80% opacity) */
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
         st.write("<div align='center'><h1>Welcome to MedWatcher</h1></div>", unsafe_allow_html=True)
         st.markdown("---")
         st.write("<h2>Login</h2>", unsafe_allow_html=True)
 
-        username = st.text_input("Username", key="username")  # Added key
-        password = st.text_input("Password", type="password", key="password")  # Added key
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
 
         if st.button("Login"):
             if username == USERNAME and password == PASSWORD:
