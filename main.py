@@ -1,66 +1,80 @@
 import pandas as pd
-from github import Github
+from github import Github, GithubException
 import streamlit as st
 from streamlit_option_menu import option_menu
 
 # Hardcoded username and password
 USERNAME = "admin"
 PASSWORD = "admin"
+GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"  # Replace with your GitHub token
+REPO_NAME = "Medwatcher"  # Replace with your repository name
 
 # Function to add new patient
 def add_new_patient(patient_id, name, age, gender, phone_number):
-    # Load main.csv from GitHub
-    g = Github("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")
-    repo = g.get_repo("Medwatcher")
-    contents = repo.get_contents("main.csv")
-    main_csv = pd.read_csv(contents.download_url)
+    try:
+        # Authenticate with GitHub using token
+        g = Github(GITHUB_TOKEN)
+        repo = g.get_repo(REPO_NAME)
+        
+        # Load main.csv from GitHub
+        contents = repo.get_contents("main.csv")
+        main_csv = pd.read_csv(contents.download_url)
 
-    # Check if patient_id already exists
-    if patient_id in main_csv['Patient ID'].values:
-        return "Error: Patient ID already exists"
+        # Check if patient_id already exists
+        if patient_id in main_csv['Patient ID'].values:
+            return "Error: Patient ID already exists"
 
-    # Add new patient to main.csv
-    new_patient = {'Patient ID': patient_id, 'Name': name, 'Age': age, 'Gender': gender, 'Phone Number': phone_number}
-    main_csv = main_csv.append(new_patient, ignore_index=True)
+        # Add new patient to main.csv
+        new_patient = {'Patient ID': patient_id, 'Name': name, 'Age': age, 'Gender': gender, 'Phone Number': phone_number}
+        main_csv = main_csv.append(new_patient, ignore_index=True)
 
-    # Update main.csv on GitHub
-    with open('main.csv', 'w') as f:
-        main_csv.to_csv(f, index=False)
-    repo.update_file(contents.path, "Updated main.csv", open('main.csv').read())
+        # Update main.csv on GitHub
+        with open('main.csv', 'w') as f:
+            main_csv.to_csv(f, index=False)
+        repo.update_file(contents.path, "Updated main.csv", open('main.csv').read())
 
-    # Create new patient CSV file
-    patient_csv = pd.DataFrame(columns=['Date', 'Code', 'Glucose', 'Task'])
-    patient_csv.to_csv(f'{patient_id}.csv', index=False)
+        # Create new patient CSV file
+        patient_csv = pd.DataFrame(columns=['Date', 'Code', 'Glucose', 'Task'])
+        patient_csv.to_csv(f'{patient_id}.csv', index=False)
 
-    # Upload new patient CSV to GitHub
-    repo.create_file(f'{patient_id}.csv', f"Added {patient_id}.csv", open(f'{patient_id}.csv').read())
+        # Upload new patient CSV to GitHub
+        repo.create_file(f'{patient_id}.csv', f"Added {patient_id}.csv", open(f'{patient_id}.csv').read())
 
-    return "Patient added successfully"
+        return "Patient added successfully"
+    
+    except GithubException as e:
+        return f"Error: {e}"
 
 # Function to delete patient
 def delete_patient(patient_id):
-    # Load main.csv from GitHub
-    g = Github("YOUR_GITHUB_TOKEN")
-    repo = g.get_repo("YOUR_REPOSITORY_NAME")
-    contents = repo.get_contents("main.csv")
-    main_csv = pd.read_csv(contents.download_url)
+    try:
+        # Authenticate with GitHub using token
+        g = Github(GITHUB_TOKEN)
+        repo = g.get_repo(REPO_NAME)
+        
+        # Load main.csv from GitHub
+        contents = repo.get_contents("main.csv")
+        main_csv = pd.read_csv(contents.download_url)
 
-    # Check if patient_id exists
-    if patient_id not in main_csv['Patient ID'].values:
-        return "Error: Patient ID does not exist"
+        # Check if patient_id exists
+        if patient_id not in main_csv['Patient ID'].values:
+            return "Error: Patient ID does not exist"
 
-    # Remove patient from main.csv
-    main_csv = main_csv[main_csv['Patient ID'] != patient_id]
+        # Remove patient from main.csv
+        main_csv = main_csv[main_csv['Patient ID'] != patient_id]
 
-    # Update main.csv on GitHub
-    with open('main.csv', 'w') as f:
-        main_csv.to_csv(f, index=False)
-    repo.update_file(contents.path, "Updated main.csv", open('main.csv').read())
+        # Update main.csv on GitHub
+        with open('main.csv', 'w') as f:
+            main_csv.to_csv(f, index=False)
+        repo.update_file(contents.path, "Updated main.csv", open('main.csv').read())
 
-    # Delete patient CSV from GitHub
-    repo.delete_file(f"{patient_id}.csv", f"Deleted {patient_id}.csv")
+        # Delete patient CSV from GitHub
+        repo.delete_file(f"{patient_id}.csv", f"Deleted {patient_id}.csv")
 
-    return "Patient deleted successfully"
+        return "Patient deleted successfully"
+    
+    except GithubException as e:
+        return f"Error: {e}"
 
 # Define the MultiApp class
 class MultiApp:
