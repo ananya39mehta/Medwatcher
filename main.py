@@ -3,10 +3,27 @@ from streamlit_option_menu import option_menu
 import patients, alerts, contacts
 import pandas as pd
 
+# Hardcoded username and password
+USERNAME = "admin"
+PASSWORD = "admin"
+
 st.set_page_config(
     page_title="MedWatcher"
     # page_icon="C:\Users\asus\hackathonPICT\MedWatcher logo.jpg"
 )
+
+def login():
+    st.write("## Login")
+
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+
+    if st.button("Login"):
+        if username == USERNAME and password == PASSWORD:
+            return True
+        else:
+            st.error("Incorrect username or password. Please try again.")
+            return False
 
 class MultiApp:
     def __init__(self):
@@ -19,28 +36,29 @@ class MultiApp:
         })
 
     def run(self):
-        with st.sidebar:
-            app = option_menu(
-                menu_title="MedWatcher",
-                options=['Patients', 'Alerts', 'Contacts', 'Individual Patient Data'],  # Removed 'Preference Range' option
-                default_index=1,
-                styles={
-                    "container": {"padding": "5!important", "background-color": 'black'},
-                    "icon": {"color": "white", "font-size": "23px"},
-                    "nav-link": {"color": "white", "font-size": "20px", "text-align": "left", "margin": "0px",
-                                 "--hover-color": "blue"},
-                    "nav-link-selected": {"background-color": "#02ab21"},
-                }
-            )
+        if login():
+            with st.sidebar:
+                app = option_menu(
+                    menu_title="MedWatcher",
+                    options=['Patients', 'Alerts', 'Contacts', 'Individual Patient Data'],  # Removed 'Preference Range' option
+                    default_index=1,
+                    styles={
+                        "container": {"padding": "5!important", "background-color": 'black'},
+                        "icon": {"color": "white", "font-size": "23px"},
+                        "nav-link": {"color": "white", "font-size": "20px", "text-align": "left", "margin": "0px",
+                                     "--hover-color": "blue"},
+                        "nav-link-selected": {"background-color": "#02ab21"},
+                    }
+                )
 
-        if app == "Patients":
-            patients.app()
-        elif app == 'Alerts':
-            alerts.app()
-        elif app == 'Contacts':
-            contacts.app()
-        elif app == 'Individual Patient Data':
-            display_individual_patient_data()
+            if app == "Patients":
+                patients.app()
+            elif app == 'Alerts':
+                alerts.app()
+            elif app == 'Contacts':
+                contacts.app()
+            elif app == 'Individual Patient Data':
+                display_individual_patient_data()
 
 def display_individual_patient_data():
     st.write("### Individual Patient Data")
