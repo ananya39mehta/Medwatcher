@@ -42,18 +42,6 @@ def login():
                 background-attachment: fixed;
                 background-size: cover;
                 opacity: 0.5; /* Adjust the opacity value here (0.8 for 80% opacity) */
-                color: black; /* Set text color to black */
-            }}
-            .stTextInput>div>div>input {{
-                background-color: #ffffff;
-                color: black; /* Set text color to black */
-            }}
-            .stButton>button {{
-                background-color: #02ab21;
-                color: white;
-            }}
-            .stButton>button:hover {{
-                background-color: #028c19;
             }}
             </style>
             """,
@@ -75,15 +63,10 @@ def login():
 
     return st.session_state.logged_in
 
-
 def home():
     st.write("# Home Page")
     st.write("Welcome to MedWatcher!")
     st.write("Please navigate using the sidebar.")
-
-    # Add your text data here
-    st.write("<div style='color:black'>Your black colored text goes here.</div>", unsafe_allow_html=True)
-
 
 class MultiApp:
     def __init__(self):
