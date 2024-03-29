@@ -9,7 +9,7 @@ PASSWORD = "admin"
 
 st.set_page_config(
     page_title="MedWatcher"
-    page_icon ="MedWatcher logo.jpg"
+    # page_icon="C:\Users\asus\hackathonPICT\MedWatcher logo.jpg"
 )
 
 def login():
@@ -47,30 +47,32 @@ class MultiApp:
         })
 
     def run(self):
-        if login():
-            home()
-            with st.sidebar:
-                app = option_menu(
-                    menu_title="MedWatcher",
-                    options=['Patients', 'Alerts', 'Contacts', 'Individual Patient Data'],  # Removed 'Preference Range' option
-                    default_index=1,
-                    styles={
-                        "container": {"padding": "5!important", "background-color": 'black'},
-                        "icon": {"color": "white", "font-size": "23px"},
-                        "nav-link": {"color": "white", "font-size": "20px", "text-align": "left", "margin": "0px",
-                                     "--hover-color": "blue"},
-                        "nav-link-selected": {"background-color": "#02ab21"},
-                    }
-                )
+        if not login():
+            return
 
-            if app == "Patients":
-                patients.app()
-            elif app == 'Alerts':
-                alerts.app()
-            elif app == 'Contacts':
-                contacts.app()
-            elif app == 'Individual Patient Data':
-                display_individual_patient_data()
+        home()
+        with st.sidebar:
+            app = option_menu(
+                menu_title="MedWatcher",
+                options=['Patients', 'Alerts', 'Contacts', 'Individual Patient Data'],  # Removed 'Preference Range' option
+                default_index=1,
+                styles={
+                    "container": {"padding": "5!important", "background-color": 'black'},
+                    "icon": {"color": "white", "font-size": "23px"},
+                    "nav-link": {"color": "white", "font-size": "20px", "text-align": "left", "margin": "0px",
+                                 "--hover-color": "blue"},
+                    "nav-link-selected": {"background-color": "#02ab21"},
+                }
+            )
+
+        if app == "Patients":
+            patients.app()
+        elif app == 'Alerts':
+            alerts.app()
+        elif app == 'Contacts':
+            contacts.app()
+        elif app == 'Individual Patient Data':
+            display_individual_patient_data()
 
 def display_individual_patient_data():
     st.write("### Individual Patient Data")
