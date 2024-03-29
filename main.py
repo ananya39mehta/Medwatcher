@@ -7,15 +7,36 @@ from patients import patients  # Importing the patients function
 USERNAME = "admin"
 PASSWORD = "admin"
 
+# Custom CSS styles
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #f0f2f6;
+    }
+    .stTextInput>div>div>input {
+        background-color: #ffffff;
+    }
+    .stButton>button {
+        background-color: #02ab21;
+        color: white;
+    }
+    .stButton>button:hover {
+        background-color: #028c19;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 def login():
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
     if not st.session_state.logged_in:
-        st.write("<style>body { background-image: url('Login.jpeg'); background-size: cover; }</style>", unsafe_allow_html=True)
-
-        st.write("# \tWelcome to MedWatcher")
-        st.write("Please log in")
+        st.write("<div align='center'><h1>Welcome to MedWatcher</h1></div>", unsafe_allow_html=True)
+        st.markdown("---")
+        st.write("<h2>Login</h2>", unsafe_allow_html=True)
 
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
@@ -23,6 +44,7 @@ def login():
         if st.button("Login"):
             if username == USERNAME and password == PASSWORD:
                 st.session_state.logged_in = True
+                st.experimental_rerun()
             else:
                 st.error("Incorrect username or password. Please try again.")
 
