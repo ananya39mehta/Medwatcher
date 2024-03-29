@@ -67,7 +67,8 @@ class MultiApp:
         if app == "Home":
             home()
         elif app == 'Alerts':
-            alerts.app()
+            with st.markdown('## Alerts'):
+                alerts.app()
         elif app == 'Patients':
             patients()
 
