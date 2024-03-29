@@ -38,7 +38,7 @@ def login():
             f"""
             <style>
             .stApp {{
-                background-image: url("https://akm-img-a-in.tosshub.com/indiatoday/images/story/media_bank/202310/5-essential-tips-for-aspiring-medical-students-050805393-16x9.jpg?VersionId=41Mf9d9tumaMmKYo9LiDFNf8hA2Wg5y0&size=690:388");
+                background-image: url("https://t3.ftcdn.net/jpg/02/81/21/10/360_F_281211036_24KPea5poawt4mXYlEjRUwsCgomtjoVc.jpg");
                 background-attachment: fixed;
                 background-size: cover;
                 opacity: 0.9; /* Adjust the opacity value here (0.8 for 80% opacity) */
