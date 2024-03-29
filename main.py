@@ -75,6 +75,19 @@ def home():
     with col2:
         st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png")
 
+    # Applying custom CSS to reduce space between columns
+    st.markdown(
+        """
+        <style>
+        .css-1l02zno {
+            margin-right: -20px !important;
+            margin-left: -20px !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
     st.write("# Home Page")
     st.write("Welcome to MedWatcher!")
     st.write("MedWatcher is a dashboard application designed to help diabetic patients and healthcare providers monitor and manage glucose levels effectively.")
@@ -83,6 +96,7 @@ def home():
     st.write("- Analyze glucose trends over time with interactive charts.")
     st.write("- Receive alerts for glucose levels outside the normal range.")
     st.write("To get started, navigate using the sidebar on the left.")
+
 
 def about_us():
     st.write("# About Us")
