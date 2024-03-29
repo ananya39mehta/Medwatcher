@@ -7,9 +7,26 @@ from patients import patients  # Importing the patients function
 USERNAME = "admin"
 PASSWORD = "admin"
 
-st.set_page_config(
-    page_title="MedWatcher"
-    # page_icon="C:\Users\asus\hackathonPICT\MedWatcher logo.jpg"
+# Custom CSS styles
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #f0f2f6;
+    }
+    .stTextInput>div>div>input {
+        background-color: #ffffff;
+    }
+    .stButton>button {
+        background-color: #02ab21;
+        color: white;
+    }
+    .stButton>button:hover {
+        background-color: #028c19;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 def login():
@@ -17,7 +34,9 @@ def login():
         st.session_state.logged_in = False
 
     if not st.session_state.logged_in:
-        st.write("## Login")
+        st.write("<div align='center'><h1>Welcome to MedWatcher</h1></div>", unsafe_allow_html=True)
+        st.markdown("---")
+        st.write("<h2>Login</h2>", unsafe_allow_html=True)
 
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
