@@ -16,8 +16,8 @@ def patients():
             glucose_data = pd.read_csv(patient_file)
 
             # Assuming 'Time' is the column containing time information
-            glucose_data['Time'] = pd.to_datetime(glucose_data['Time'])
-            glucose_data.set_index('Time', inplace=True)
+            glucose_data['Date'] = pd.to_datetime(glucose_data['Date'])
+            glucose_data.set_index('Date', inplace=True)
 
             st.write("### Glucose Data:")
             st.write(glucose_data)
