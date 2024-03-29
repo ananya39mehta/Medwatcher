@@ -7,7 +7,7 @@ from streamlit_option_menu import option_menu
 USERNAME = "admin"
 PASSWORD = "admin"
 GITHUB_TOKEN = "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"  # Replace with your GitHub token
-REPO_NAME = "Medwatcher"  # Replace with your repository name
+REPO_NAME = "ananya39mehta/Medwatcher"  # Replace with your repository name
 
 # Function to add new patient
 def add_new_patient(patient_id, name, age, gender, phone_number):
