@@ -32,7 +32,7 @@ def login():
     return st.session_state.logged_in
 
 def home():
-    st.write("## Home Page")
+    st.write("# Home Page")
     st.write("Welcome to MedWatcher!")
     st.write("Please navigate using the sidebar.")
 
