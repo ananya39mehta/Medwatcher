@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def patients():
-    #st.write("## Patients Page")
     patient_id = st.text_input("Enter Patient ID:")
     if patient_id:
         main_df = pd.read_csv("main.csv")
@@ -24,8 +23,17 @@ def patients():
             st.write(glucose_data)
 
             st.write("### Glucose Graph:")
-            st.line_chart(glucose_data['Glucose'])
-            
+            # Create a line chart using Matplotlib
+            fig, ax = plt.subplots()
+            ax.plot(glucose_data.index, glucose_data['Glucose'])
+
+            # Add horizontal lines at y=180 and y=50
+            ax.axhline(y=180, color='red', linestyle='--', label='180')
+            ax.axhline(y=50, color='red', linestyle='--', label='50')
+            ax.legend()
+
+            # Display the plot using Streamlit
+            st.pyplot(fig)
 
             # Filter points not between 50 and 180
             filtered_data = glucose_data[(glucose_data['Glucose'] < 50) | (glucose_data['Glucose'] > 180)]
@@ -41,7 +49,7 @@ def patients():
                 fig, ax = plt.subplots()
                 ax.pie(task_counts, labels=task_counts.index, autopct='%1.1f%%')
                 ax.set_title("Tasks Leading to Deviations from 50-180 Range")
-                
+
                 # Display the pie chart using Streamlit
                 st.write("### Tasks Leading to Deviations from 50-180 Range:")
                 st.pyplot(fig)
