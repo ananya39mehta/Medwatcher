@@ -73,7 +73,7 @@ def home():
     
     # Displaying another image
     with col2:
-        st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=150)
+        st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=300)
 
     st.write("# Home Page")
     st.write("Welcome to MedWatcher!")
