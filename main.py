@@ -64,16 +64,19 @@ def login():
     return st.session_state.logged_in
 
 def home():
-    # Displaying brand logo and another image side by side
-    col1, col2 = st.columns(2)
+    # Displaying brand logo and another image side by side with the same height and minimal space between them
+    st.write("<div style='display:flex;'>", unsafe_allow_html=True)
     
     # Displaying brand logo with reduced size
-    with col1:
-        st.image("MedWatchersLogo.jpeg", width=150)
+    st.image("MedWatchersLogo.jpeg", width=150, use_column_width=False)
+    
+    # Adding a margin to create space between the images
+    st.write("<div style='margin: 0px 10px;'></div>", unsafe_allow_html=True)
     
     # Displaying another image
-    with col2:
-        st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png")
+    st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=150, use_column_width=False)
+    
+    st.write("</div>", unsafe_allow_html=True)
 
     st.write("# Home Page")
     st.write("Welcome to MedWatcher!")
@@ -83,6 +86,7 @@ def home():
     st.write("- Analyze glucose trends over time with interactive charts.")
     st.write("- Receive alerts for glucose levels outside the normal range.")
     st.write("To get started, navigate using the sidebar on the left.")
+
 
 
 def about_us():
