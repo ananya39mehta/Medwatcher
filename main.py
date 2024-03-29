@@ -9,7 +9,7 @@ PASSWORD = "admin"
 
 st.set_page_config(
     page_title="MedWatcher"
-    # page_icon="C:\Users\asus\hackathonPICT\MedWatcher logo.jpg"
+    page_icon ="MedWatcher logo.jpg"
 )
 
 def login():
