@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
 
 def patients():
     st.write("## Patients Page")
@@ -15,18 +14,16 @@ def patients():
             # Plotting graphs related to glucose from respective PatientX.csv file
             patient_file = f"Patient{patient_id}.csv"
             glucose_data = pd.read_csv(patient_file)
+
+            # Assuming 'Time' is the column containing time information
+            glucose_data['Time'] = pd.to_datetime(glucose_data['Time'])
+            glucose_data.set_index('Time', inplace=True)
+
             st.write("### Glucose Data:")
             st.write(glucose_data)
 
-            # Create an Altair line chart
-            chart = alt.Chart(glucose_data).mark_line().encode(
-                x='Time:T',  # Assuming 'Time' is the column containing time information
-                y='Glucose:Q'  # Assuming 'Glucose' is the column containing glucose values
-            ).properties(
-                title='Glucose Graph'
-            )
             st.write("### Glucose Graph:")
-            st.altair_chart(chart, use_container_width=True)
+            st.line_chart(glucose_data['Glucose'])
 
         else:
             st.error("Patient ID not found.")
