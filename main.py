@@ -7,7 +7,7 @@ from streamlit_option_menu import option_menu
 USERNAME = "admin"
 PASSWORD = "admin"
 GITHUB_TOKEN = "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"  # Replace with your GitHub token
-REPO_NAME = "ananya39mehta/Medwatcher"  # Replace with your repository name
+REPO_NAME = "Medwatcher"  # Replace with your repository name
 
 # Function to add new patient
 def add_new_patient(patient_id, name, age, gender, phone_number):
@@ -43,7 +43,7 @@ def add_new_patient(patient_id, name, age, gender, phone_number):
         return "Patient added successfully"
     
     except GithubException as e:
-        return f"Error: {e}"
+        return f"Error: {e.data['message']}"
 
 # Function to delete patient
 def delete_patient(patient_id):
@@ -74,7 +74,7 @@ def delete_patient(patient_id):
         return "Patient deleted successfully"
     
     except GithubException as e:
-        return f"Error: {e}"
+        return f"Error: {e.data['message']}"
 
 # Define the MultiApp class
 class MultiApp:
@@ -147,10 +147,7 @@ class MultiApp:
         st.write("Our mission is to provide tools and insights to empower individuals to better understand and control their glucose levels.")
         st.write("For any inquiries or feedback, please contact us at contact@medwatcher.com.")
         st.write("## Meet the Team")
-        st.write("**Dhwani Bhavankar** - dhwani.bhavankar.btech2022@sitpune.edu.in")
-        st.write("**Ananya Mehta** - ananya39mehta@gmail.com")
-        st.write("**Harsimran Kaur** - harsimrankaur2493@gmail.com")
-        st.write("**Mayank Sahai** - smayank2412@gmail.com")
+        st.write("**Dhwani Bhavankar** - dhwani.bhavankar.btech2022@sit
 
     def add_patients(self):
         st.write("# Add Patients")
