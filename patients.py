@@ -15,16 +15,19 @@ def patients():
             patient_file = f"Patient{patient_id}.csv"
             glucose_data = pd.read_csv(patient_file)
 
+            # Print columns of the glucose_data DataFrame
+            st.write("### Glucose Data Columns:")
+            st.write(glucose_data.columns.tolist())
+
             # Assuming 'Time' is the column containing time information
-            glucose_data['Date'] = pd.to_datetime(glucose_data['Date'])
-            glucose_data.set_index('Date', inplace=True)
+            glucose_data['Time'] = pd.to_datetime(glucose_data['Time'])
+            glucose_data.set_index('Time', inplace=True)
 
             st.write("### Glucose Data:")
             st.write(glucose_data)
 
             st.write("### Glucose Graph:")
-            st.line_chart(glucose_data['Glucose'], use_container_width=True, 
-                          x_axis_label='Date', y_axis_label='Glucose')
+            st.line_chart(glucose_data['Glucose'])
 
         else:
             st.error("Patient ID not found.")
