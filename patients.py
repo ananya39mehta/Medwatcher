@@ -27,25 +27,7 @@ def patients():
             st.line_chart(glucose_data['Glucose'])
 
             st.write("### Glucose Graph:")
-            # Create Altair line chart
-            line = alt.Chart(glucose_data.reset_index()).mark_line().encode(
-                x='Date:T',
-                y='Glucose:Q'
-            ).properties(
-                width=600,
-                height=400
-            )
-
-            # Add horizontal lines
-            hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=2).encode(
-                y='y:Q'
-            )
-
-            hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=2).encode(
-                y='y:Q'
-            )
-
-            st.write(alt.layer(line, hline_180, hline_50).properties(title='Glucose Graph'))
+            
 
             # Filter points not between 50 and 180
             filtered_data = glucose_data[(glucose_data['Glucose'] < 50) | (glucose_data['Glucose'] > 180)]
