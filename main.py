@@ -73,7 +73,7 @@ def home():
     
     # Displaying another image
     with col2:
-        st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=200)
+        st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=800)
 
     # Applying custom CSS to reduce space between columns and stretch image
     st.markdown(
