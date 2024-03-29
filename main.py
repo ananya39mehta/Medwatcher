@@ -7,29 +7,26 @@ from patients import patients  # Importing the patients function
 USERNAME = "admin"
 PASSWORD = "admin"
 
-# Custom CSS styles
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-image: url('https://github.com/ananya39mehta/Medwatcher/blob/main/Login.jpeg');
-        background-size: cover;
-    }
-    .login-container {
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 20px;
-        border-radius: 10px;
-        margin: auto;
-        max-width: 400px;
-    }
-    .login-title {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# Custom HTML and CSS for background image
+background_html = """
+<style>
+body {
+    background-image: url('https://github.com/ananya39mehta/Medwatcher/blob/main/Login.jpeg');
+    background-size: cover;
+}
+.login-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 400px;
+}
+.login-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+</style>
+"""
 
 def login():
     if "logged_in" not in st.session_state:
@@ -96,5 +93,8 @@ class MultiApp:
             patients()
 
 if __name__ == "__main__":
+    # Injecting background HTML/CSS
+    st.markdown(background_html, unsafe_allow_html=True)
+
     multi_app = MultiApp()
     multi_app.run()
