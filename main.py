@@ -12,17 +12,19 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #f0f2f6;
+        background-image: url('https://github.com/ananya39mehta/Medwatcher/blob/main/Login.jpeg');
+        background-size: cover;
     }
-    .stTextInput>div>div>input {
-        background-color: #ffffff;
+    .login-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        margin: auto;
+        max-width: 400px;
     }
-    .stButton>button {
-        background-color: #02ab21;
-        color: white;
-    }
-    .stButton>button:hover {
-        background-color: #028c19;
+    .login-title {
+        text-align: center;
+        margin-bottom: 20px;
     }
     </style>
     """,
@@ -34,8 +36,8 @@ def login():
         st.session_state.logged_in = False
 
     if not st.session_state.logged_in:
-        st.write("<div align='center'><h1>Welcome to MedWatcher</h1></div>", unsafe_allow_html=True)
-        st.markdown("---")
+        st.markdown("<h1 class='login-title'>Welcome to MedWatcher</h1>", unsafe_allow_html=True)
+        st.markdown("<div class='login-container'>", unsafe_allow_html=True)
         st.write("<h2>Login</h2>", unsafe_allow_html=True)
 
         username = st.text_input("Username")
@@ -47,6 +49,8 @@ def login():
                 st.experimental_rerun()
             else:
                 st.error("Incorrect username or password. Please try again.")
+
+        st.markdown("</div>", unsafe_allow_html=True)
 
     return st.session_state.logged_in
 
