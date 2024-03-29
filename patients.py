@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import altair as alt
 
 def patients():
     st.write("## Patients Page")
@@ -15,27 +16,28 @@ def patients():
             patient_file = f"Patient{patient_id}.csv"
             glucose_data = pd.read_csv(patient_file)
 
-            # Exclude the 'Unnamed: 0' column if present
-            if 'Unnamed: 0' in glucose_data.columns:
-                glucose_data.drop(columns=['Unnamed: 0'], inplace=True)
-
-            # Print columns of the glucose_data DataFrame
-            st.write("### Glucose Data Columns:")
-            st.write(glucose_data.columns.tolist())
-
             # Assuming 'Time' is the column containing time information
             glucose_data['Date'] = pd.to_datetime(glucose_data['Date'])
-            glucose_data.set_index('Date', inplace=True)
 
-            st.write("### Glucose Data:")
-            st.write(glucose_data)
+            # Create Altair chart
+            base = alt.Chart(glucose_data).encode(x='Time:T')
+
+            # Main line chart
+            line = base.mark_line().encode(
+                y='Glucose:Q'
+            )
+
+            # Add horizontal lines
+            hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3]).encode(
+                y='y:Q'
+            )
+
+            hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3]).encode(
+                y='y:Q'
+            )
 
             st.write("### Glucose Graph:")
-            st.line_chart(glucose_data['Glucose'])
-            
-            # Add horizontal lines at y=180 and y=50
-            chart.add_hline(y=180, color='red')
-            chart.add_hline(y=50, color='red')
+            st.altair_chart(line + hline_180 + hline_50, use_container_width=True)
 
         else:
             st.error("Patient ID not found.")
