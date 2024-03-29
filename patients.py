@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
 
 def patients():
     st.write("## Patients Page")
@@ -18,15 +17,13 @@ def patients():
 
             # Assuming 'Time' is the column containing time information
             glucose_data['Date'] = pd.to_datetime(glucose_data['Date'])
+            glucose_data.set_index('Date', inplace=True)
 
-            # Create Altair chart
-            base = alt.Chart(glucose_data).encode(x='Time:T')
+            st.write("### Glucose Data:")
+            st.write(glucose_data)
 
-            # Main line chart
-            line = base.mark_line().encode(
-                y='Glucose:Q'
-            )
-
+            st.write("### Glucose Graph:")
+            chart = st.line_chart(glucose_data['Glucose'])
             # Add horizontal lines
             hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3]).encode(
                 y='y:Q'
@@ -35,9 +32,6 @@ def patients():
             hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3]).encode(
                 y='y:Q'
             )
-
-            st.write("### Glucose Graph:")
-            st.altair_chart(line + hline_180 + hline_50, use_container_width=True)
 
         else:
             st.error("Patient ID not found.")
