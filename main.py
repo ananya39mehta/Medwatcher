@@ -53,7 +53,7 @@ class MultiApp:
         with st.sidebar:
             app = option_menu(
                 menu_title="MedWatcher",
-                options=['Home', 'Patients', 'Alerts', 'Contacts', 'Individual Patient Data'],  # Added 'Home' option
+                options=['Home', 'Patients', 'Alerts', 'Contacts'],  # Removed 'Individual Patient Data' option
                 default_index=0,  # Set default index to 'Home'
                 styles={
                     "container": {"padding": "5!important", "background-color": 'black'},
@@ -72,39 +72,6 @@ class MultiApp:
             alerts.app()
         elif app == 'Contacts':
             contacts.app()
-        elif app == 'Individual Patient Data':
-            display_individual_patient_data()
-
-def display_individual_patient_data():
-    st.write("### Individual Patient Data")
-
-    # Allow user to input patient ID
-    patient_id = st.text_input("Enter Patient ID:")
-    
-    # Read main CSV file
-    main_df = pd.read_csv("main.csv")
-
-    # Read individual patient CSV file based on entered patient ID
-    filename = f"{patient_id}.csv"
-    try:
-        patient_data_df = pd.read_csv(filename)
-        patient_info = main_df[main_df["Patient ID"] == int(patient_id)].iloc[0]
-        
-        # Display patient information
-        st.write("#### Patient Information:")
-        st.write(f"**Name:** {patient_info['Name']}")
-        st.write(f"**Age:** {patient_info['Age']}")
-        st.write(f"**Gender:** {patient_info['Gender']}")
-        st.write(f"**Label:** {patient_info['Label']}")
-        
-        # Display graphs related to patient's health data
-        st.write("#### Health Data:")
-        # Add code here to display graphs based on patient's health data
-        # For example:
-        st.line_chart(patient_data_df['Heart rate'])
-        st.line_chart(patient_data_df['Systolic blood pressure'])
-    except FileNotFoundError:
-        st.write("Please enter a valid Patient ID.")
 
 if __name__ == "__main__":
     multi_app = MultiApp()
