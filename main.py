@@ -79,6 +79,19 @@ def about_us():
     st.write("Our mission is to provide tools and insights to empower individuals to better understand and control their glucose levels.")
     st.write("For any inquiries or feedback, please contact us at contact@medwatcher.com.")
     
+    # Add your photo, name, and email ID
+    st.write("## Meet the Team")
+    
+    # Photo 1
+    st.image("path_to_your_photo1.jpg", caption="Your Name", use_column_width=True)
+    st.write("Your Email ID")
+    
+    # Photo 2
+    st.image("path_to_your_photo2.jpg", caption="Team Member 2's Name", use_column_width=True)
+    st.write("Team Member 2's Email ID")
+    
+    # Add more photos and details for other team members as needed
+
 class MultiApp:
     def __init__(self):
         self.apps = []
