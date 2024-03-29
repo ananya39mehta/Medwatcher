@@ -66,4 +66,4 @@ def display_individual_patient_data():
         
         # Display graphs related to patient's health data
         st.write("#### Health Data:")
-        # Add code here
+
