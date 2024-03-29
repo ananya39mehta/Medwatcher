@@ -83,14 +83,22 @@ def about_us():
     st.write("## Meet the Team")
     
     # Photo 1
-    st.image("path_to_your_photo1.jpg", caption="Your Name", use_column_width=True)
-    st.write("Your Email ID")
+    st.image("img1.jpeg", caption="Dhwani Bhavankar", use_column_width=True)
+    st.write("dhwani.bhavankar.btech2022@sitpune.edu.in")
     
     # Photo 2
-    st.image("path_to_your_photo2.jpg", caption="Team Member 2's Name", use_column_width=True)
-    st.write("Team Member 2's Email ID")
+    st.image("img2.jpeg", caption="Ananya Mehta", use_column_width=True)
+    st.write("ananya39mehta@gmail.com")
     
-    # Add more photos and details for other team members as needed
+    # Photo 3
+    st.image("img3.jpeg", caption="Harsimran Kaur", use_column_width=True)
+    st.write("harsimrankaur2493@gmail.com")
+    
+    # Photo 4
+    st.image("img4.jpeg", caption="Mayank Sahai", use_column_width=True)
+    st.write("smayank2412@gmail.com")
+
+
 
 class MultiApp:
     def __init__(self):
