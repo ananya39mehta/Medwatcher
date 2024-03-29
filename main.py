@@ -25,10 +25,16 @@ def login():
         if st.button("Login"):
             if username == USERNAME and password == PASSWORD:
                 st.session_state.logged_in = True
+                st.experimental_rerun()
             else:
                 st.error("Incorrect username or password. Please try again.")
 
     return st.session_state.logged_in
+
+def home():
+    st.write("## Home Page")
+    st.write("Welcome to MedWatcher!")
+    st.write("Please navigate using the sidebar.")
 
 class MultiApp:
     def __init__(self):
@@ -42,6 +48,7 @@ class MultiApp:
 
     def run(self):
         if login():
+            home()
             with st.sidebar:
                 app = option_menu(
                     menu_title="MedWatcher",
