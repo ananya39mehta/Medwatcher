@@ -45,7 +45,7 @@ def login():
         </style>
         """,
         unsafe_allow_html=True
-    )
+        )
         st.write("<div align='center'><h1>Welcome to MedWatcher</h1></div>", unsafe_allow_html=True)
         st.markdown("---")
         st.write("<h2>Login</h2>", unsafe_allow_html=True)
