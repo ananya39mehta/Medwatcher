@@ -34,11 +34,11 @@ def patients():
             )
 
             # Add horizontal lines
-            hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=2).encode(
+            hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=3.5).encode(
                 y='y:Q'
             )
 
-            hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=2).encode(
+            hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=3.5).encode(
                 y='y:Q'
             )
 
@@ -51,18 +51,21 @@ def patients():
                 st.write("### Points Outside 50-180 Range:")
                 st.write(filtered_data)
 
-                # Create Altair scatter plot
-                scatter = alt.Chart(filtered_data.reset_index()).mark_circle(color='red').encode(
-                    x='Date:T',
-                    y='Glucose:Q',
-                    tooltip=['Date', 'Glucose', 'Task']
+                # Count occurrences of each task
+                task_counts = filtered_data['Task'].value_counts()
+
+                # Create Altair pie chart
+                pie_chart = alt.Chart(task_counts.reset_index()).mark_bar().encode(
+                    x='Task:N',
+                    y='index:N',
+                    tooltip=['index', 'Task']
                 ).properties(
                     width=600,
                     height=400
                 ).interactive()
 
-                st.write("### Points Outside 50-180 Range Graph:")
-                st.write(scatter)
+                st.write("### Tasks Leading to Deviations from 50-180 Range:")
+                st.write(pie_chart)
 
         else:
             st.error("Patient ID not found.")
