@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import alerts, contacts
+from patient import patients  # Importing the patients function
 
 # Hardcoded username and password
 USERNAME = "admin"
@@ -52,7 +53,7 @@ class MultiApp:
         with st.sidebar:
             app = option_menu(
                 menu_title="MedWatcher",
-                options=['Home', 'Alerts', 'Contacts'],  # Removed 'Patients' option
+                options=['Home', 'Patients', 'Alerts', 'Contacts'],  # Added 'Patients' option
                 default_index=0,  # Set default index to 'Home'
                 styles={
                     "container": {"padding": "5!important", "background-color": 'black'},
@@ -69,6 +70,8 @@ class MultiApp:
             alerts.app()
         elif app == 'Contacts':
             contacts.app()
+        elif app == 'Patients':
+            patients()
 
 if __name__ == "__main__":
     multi_app = MultiApp()
