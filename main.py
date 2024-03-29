@@ -66,7 +66,13 @@ def login():
 def home():
     st.write("# Home Page")
     st.write("Welcome to MedWatcher!")
-    st.write("Please navigate using the sidebar.")
+    st.write("MedWatcher is a dashboard application designed to help diabetic patients and healthcare providers monitor and manage glucose levels effectively.")
+    st.write("With MedWatcher, you can:")
+    st.write("- View detailed patient information, including glucose data and relevant tasks.")
+    st.write("- Analyze glucose trends over time with interactive charts.")
+    st.write("- Receive alerts for glucose levels outside the normal range.")
+    st.write("To get started, navigate using the sidebar on the left.")
+
 
 class MultiApp:
     def __init__(self):
