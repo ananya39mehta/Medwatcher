@@ -73,18 +73,20 @@ def home():
     
     # Displaying another image
     with col2:
-        st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", use_column_width=True, output_format='PNG')
+        st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=200)
 
-    # Applying custom CSS to reduce space between columns
+    # Applying custom CSS to reduce space between columns and stretch image
     st.markdown(
-        f"""
+        """
         <style>
         .css-1l02zno {
             margin-right: -20px !important;
             margin-left: -20px !important;
         }
-        .css-19ih76e {
-            margin-left: -15px !important;
+        .css-1s9erse img {
+            object-fit: fill;
+            width: 100%;
+            height: 100%;
         }
         </style>
         """,
@@ -99,6 +101,7 @@ def home():
     st.write("- Analyze glucose trends over time with interactive charts.")
     st.write("- Receive alerts for glucose levels outside the normal range.")
     st.write("To get started, navigate using the sidebar on the left.")
+
 
 
 
