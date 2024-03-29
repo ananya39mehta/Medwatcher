@@ -65,7 +65,7 @@ def login():
 
 def home():
     # Displaying brand logo above the "Home" word near the center
-    st.write("<div style='text-align: center;'><img src='MedWatchersLogo.jpeg' style='width:200px;'></div>", unsafe_allow_html=True)
+    st.image("MedWatchersLogo.jpeg", use_column_width=True)
     st.write("# Home Page")
     st.write("Welcome to MedWatcher!")
     st.write("MedWatcher is a dashboard application designed to help diabetic patients and healthcare providers monitor and manage glucose levels effectively.")
@@ -74,6 +74,7 @@ def home():
     st.write("- Analyze glucose trends over time with interactive charts.")
     st.write("- Receive alerts for glucose levels outside the normal range.")
     st.write("To get started, navigate using the sidebar on the left.")
+
 
 
 
