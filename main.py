@@ -106,6 +106,33 @@ def home():
 
 
 def about_us():
+    col1, col2, col3 ,col4, col5 ,col6= st.columns(6)
+    
+    # Displaying brand logo with reduced size
+    with col1:
+        st.image("MedWatchersLogo.jpeg", width=150)
+    
+    # Displaying another image
+    with col2:
+        st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=800)
+
+    # Applying custom CSS to reduce space between columns and stretch image
+    st.markdown(
+        """
+        <style>
+        .css-1l02zno {
+            margin-right: -20px !important;
+            margin-left: -20px !important;
+        }
+        .css-1s9erse img {
+            object-fit: fill;
+            width: 100%;
+            height: 100%;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     st.write("# About Us")
     st.write("MedWatcher is a platform dedicated to improving diabetes management for patients and healthcare providers.")
     st.write("Our mission is to provide tools and insights to empower individuals to better understand and control their glucose levels.")
@@ -172,8 +199,60 @@ class MultiApp:
         if app == "Home":
             home()
         elif app == 'Alerts':
+            col1, col2, col3 ,col4, col5 ,col6= st.columns(6)
+    
+            # Displaying brand logo with reduced size
+            with col1:
+                st.image("MedWatchersLogo.jpeg", width=150)
+            
+            # Displaying another image
+            with col2:
+                st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=800)
+        
+            # Applying custom CSS to reduce space between columns and stretch image
+            st.markdown(
+                """
+                <style>
+                .css-1l02zno {
+                    margin-right: -20px !important;
+                    margin-left: -20px !important;
+                }
+                .css-1s9erse img {
+                    object-fit: fill;
+                    width: 100%;
+                    height: 100%;
+                }
+                </style>
+                """,
+                unsafe_allow_html=True
+            )
             alerts.app()
         elif app == 'Patients':
+            # Displaying brand logo with reduced size
+            with col1:
+                st.image("MedWatchersLogo.jpeg", width=150)
+            
+            # Displaying another image
+            with col2:
+                st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=800)
+        
+            # Applying custom CSS to reduce space between columns and stretch image
+            st.markdown(
+                """
+                <style>
+                .css-1l02zno {
+                    margin-right: -20px !important;
+                    margin-left: -20px !important;
+                }
+                .css-1s9erse img {
+                    object-fit: fill;
+                    width: 100%;
+                    height: 100%;
+                }
+                </style>
+                """,
+                unsafe_allow_html=True
+            )
             st.write("# Patients")
             patients()
         elif app == 'About Us':  # Handling 'About Us' page
