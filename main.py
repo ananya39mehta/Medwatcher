@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import patients, alerts, contacts
+import pandas as pd
 
 # Hardcoded username and password
 USERNAME = "admin"
@@ -35,11 +36,6 @@ def home():
     st.write("Welcome to MedWatcher!")
     st.write("Please navigate using the sidebar.")
 
-def about_us():
-    st.write("## About Us")
-    st.write("This is the About Us page.")
-    st.write("Here, you can provide information about your application.")
-
 class MultiApp:
     def __init__(self):
         self.apps = []
@@ -55,8 +51,18 @@ class MultiApp:
             return
 
         with st.sidebar:
-            st.sidebar.write("## Menu")
-            app = st.sidebar.radio("", ['Home', 'Patients', 'Alerts', 'Contacts', 'About Us'], index=1)
+            app = option_menu(
+                menu_title="MedWatcher",
+                options=['Home', 'Patients', 'Alerts', 'Contacts'],  # Removed 'Individual Patient Data' option
+                default_index=0,  # Set default index to 'Home'
+                styles={
+                    "container": {"padding": "5!important", "background-color": 'black'},
+                    "icon": {"color": "white", "font-size": "23px"},
+                    "nav-link": {"color": "white", "font-size": "20px", "text-align": "left", "margin": "0px",
+                                 "--hover-color": "blue"},
+                    "nav-link-selected": {"background-color": "#02ab21"},
+                }
+            )
 
         if app == "Home":
             home()
@@ -66,8 +72,6 @@ class MultiApp:
             alerts.app()
         elif app == 'Contacts':
             contacts.app()
-        elif app == 'About Us':
-            about_us()
 
 if __name__ == "__main__":
     multi_app = MultiApp()
