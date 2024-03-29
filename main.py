@@ -69,6 +69,7 @@ class MultiApp:
         elif app == 'Alerts':
             alerts.app()
         elif app == 'Patients':
+            st.write("# Patients")
             patients()
 
 if __name__ == "__main__":
