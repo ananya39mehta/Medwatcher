@@ -55,17 +55,18 @@ class MultiApp:
             return
 
         with st.sidebar:
-            option = st.selectbox("Menu", ["Home", "Patients", "Alerts", "Contacts", "About Us"])
+            st.sidebar.write("## Menu")
+            app = st.sidebar.radio("", ['Home', 'Patients', 'Alerts', 'Contacts', 'About Us'], index=1)
 
-        if option == "Home":
+        if app == "Home":
             home()
-        elif option == "Patients":
+        elif app == "Patients":
             patients.app()
-        elif option == 'Alerts':
+        elif app == 'Alerts':
             alerts.app()
-        elif option == 'Contacts':
+        elif app == 'Contacts':
             contacts.app()
-        elif option == 'About Us':
+        elif app == 'About Us':
             about_us()
 
 if __name__ == "__main__":
