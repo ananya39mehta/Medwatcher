@@ -66,6 +66,7 @@ def login():
 def home():
     # Displaying brand logo above the "Home" word near the center
     st.image("MedWatchersLogo.jpeg", use_column_width=True)
+    st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.siu.edu.in%2F&psig=AOvVaw2qd9-dbtejekTEY21AWubE&ust=1711828915214000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJCYz-ahmoUDFQAAAAAdAAAAABAE")
     st.write("# Home Page")
     st.write("Welcome to MedWatcher!")
     st.write("MedWatcher is a dashboard application designed to help diabetic patients and healthcare providers monitor and manage glucose levels effectively.")
