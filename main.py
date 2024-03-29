@@ -9,7 +9,7 @@ PASSWORD = "admin"
 
 st.set_page_config(
     page_title="MedWatcher"
-    # page_icon ="https://github.com/ananya39mehta/Medwatcher/blob/main/MedWatcher%20logo.jpg"
+    # page_icon="C:\Users\asus\hackathonPICT\MedWatcher logo.jpg"
 )
 
 def login():
@@ -50,12 +50,11 @@ class MultiApp:
         if not login():
             return
 
-        home()
         with st.sidebar:
             app = option_menu(
                 menu_title="MedWatcher",
-                options=['Patients', 'Alerts', 'Contacts', 'Individual Patient Data'],  # Removed 'Preference Range' option
-                default_index=1,
+                options=['Home', 'Patients', 'Alerts', 'Contacts', 'Individual Patient Data'],  # Added 'Home' option
+                default_index=0,  # Set default index to 'Home'
                 styles={
                     "container": {"padding": "5!important", "background-color": 'black'},
                     "icon": {"color": "white", "font-size": "23px"},
@@ -65,7 +64,9 @@ class MultiApp:
                 }
             )
 
-        if app == "Patients":
+        if app == "Home":
+            home()
+        elif app == "Patients":
             patients.app()
         elif app == 'Alerts':
             alerts.app()
