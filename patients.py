@@ -17,10 +17,15 @@ def patients():
             st.write("### Glucose Data:")
             st.write(glucose_data)
 
-            # Plot only every alternate three labels on the x-axis
-            glucose_data_subset = glucose_data.iloc[::3, :]  # Select every alternate three rows
+            # Plot the glucose data
             st.write("### Glucose Graph:")
-            st.line_chart(glucose_data_subset.set_index('Date')['Glucose'])
+            glucose_chart = st.line_chart(glucose_data.set_index('Date')['Glucose'])
+
+            # Customize x-axis ticks to display only every alternate three labels
+            num_ticks = len(glucose_data)
+            x_ticks = glucose_data.index[::3]  # Select every alternate three indices
+            glucose_chart.pyplot().set_xticks(range(num_ticks))
+            glucose_chart.pyplot().set_xticklabels(glucose_data['Date'][::3], rotation=45, ha='right')
 
         else:
             st.error("Patient ID not found.")
