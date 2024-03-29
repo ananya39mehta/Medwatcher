@@ -16,8 +16,15 @@ def patients():
             glucose_data = pd.read_csv(patient_file)
             st.write("### Glucose Data:")
             st.write(glucose_data)
+
+            # Plot only every alternate three labels on the x-axis
+            glucose_chart = st.line_chart(glucose_data.set_index('Date')['Glucose'])
+            glucose_chart.pyplot().set_xticks(glucose_chart.pyplot().get_xticks()[::3])
+            
             st.write("### Glucose Graph:")
-            st.line_chart(glucose_data.set_index('Date')['Glucose'])
+            st.pyplot()
 
         else:
             st.error("Patient ID not found.")
+
+patients()
