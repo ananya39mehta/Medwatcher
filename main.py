@@ -90,24 +90,24 @@ def about_us():
         st.image("img1.jpeg", caption="Dhwani Bhavankar", width=100, use_column_width=False, output_format='png')
         st.write("**Dhwani Bhavankar**")
         st.write("dhwani.bhavankar.btech2022@sitpune.edu.in")
-        
-        # Photo 3
-        st.image("img3.jpeg", caption="Harsimran Kaur", width=100, use_column_width=False, output_format='png')
-        st.write("**Harsimran Kaur**")
-        st.write("harsimrankaur2493@gmail.com")
     
     # Photo 2
     with col2:
         st.image("img2.jpeg", caption="Ananya Mehta", width=100, use_column_width=False, output_format='png')
         st.write("**Ananya Mehta**")
         st.write("ananya39mehta@gmail.com")
-        
-        # Photo 4
+
+    # Photo 3
+    with col1:
+        st.image("img3.jpeg", caption="Harsimran Kaur", width=100, use_column_width=False, output_format='png')
+        st.write("**Harsimran Kaur**")
+        st.write("harsimrankaur2493@gmail.com")
+    
+    # Photo 4
+    with col2:
         st.image("img4.jpeg", caption="Mayank Sahai", width=100, use_column_width=False, output_format='png')
         st.write("**Mayank Sahai**")
         st.write("smayank2412@gmail.com")
-
-about_us()
 
 class MultiApp:
     def __init__(self):
