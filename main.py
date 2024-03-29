@@ -3,7 +3,6 @@ from PIL import Image
 from streamlit_option_menu import option_menu
 import alerts
 from patients import patients  # Importing the patients function
-import base64
 
 # Hardcoded username and password
 USERNAME = "admin"
@@ -15,37 +14,17 @@ def load_image(image_path):
     img = Image.open(image_path)
     return img
 
-background_image = load_image("https://github.com/ananya39mehta/Medwatcher/blob/main/Login.jpeg")
-
-# Custom CSS for background image
-background_css = f"""
-<style>
-body {{
-    background-image: url('data:image/jpeg;base64,{base64.b64encode(background_image.getvalue()).decode()}');
-    background-size: cover;
-}}
-.login-container {{
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    margin: auto;
-    max-width: 400px;
-}}
-.login-title {{
-    text-align: center;
-    margin-bottom: 20px;
-}}
-</style>
-"""
+background_image = load_image("Login.jpeg")
 
 def login():
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
     if not st.session_state.logged_in:
-        st.markdown("<h1 class='login-title'>Welcome to MedWatcher</h1>", unsafe_allow_html=True)
-        st.markdown("<div class='login-container'>", unsafe_allow_html=True)
-        st.write("<h2>Login</h2>", unsafe_allow_html=True)
+        st.image(background_image, use_column_width=True)
+
+        st.write("# Welcome to MedWatcher")
+        st.write("Please log in")
 
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
@@ -53,11 +32,8 @@ def login():
         if st.button("Login"):
             if username == USERNAME and password == PASSWORD:
                 st.session_state.logged_in = True
-                st.experimental_rerun()
             else:
                 st.error("Incorrect username or password. Please try again.")
-
-        st.markdown("</div>", unsafe_allow_html=True)
 
     return st.session_state.logged_in
 
@@ -103,8 +79,5 @@ class MultiApp:
             patients()
 
 if __name__ == "__main__":
-    # Injecting background CSS
-    st.markdown(background_css, unsafe_allow_html=True)
-
     multi_app = MultiApp()
     multi_app.run()
