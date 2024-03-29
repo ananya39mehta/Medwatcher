@@ -16,7 +16,7 @@ def patients():
             patient_file = f"Patient{patient_id}.csv"
             glucose_data = pd.read_csv(patient_file)
 
-            # Assuming 'Time' is the column containing time information
+            # Assuming 'Date' is the column containing date information
             glucose_data['Date'] = pd.to_datetime(glucose_data['Date'])
             glucose_data.set_index('Date', inplace=True)
 
@@ -24,7 +24,15 @@ def patients():
             st.write(glucose_data)
 
             st.write("### Glucose Graph:")
-            chart = st.line_chart(glucose_data['Glucose'])
+            # Create Altair line chart
+            line = alt.Chart(glucose_data.reset_index()).mark_line().encode(
+                x='Date:T',
+                y='Glucose:Q'
+            ).properties(
+                width=600,
+                height=400
+            )
+
             # Add horizontal lines
             hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3]).encode(
                 y='y:Q'
@@ -33,6 +41,8 @@ def patients():
             hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3]).encode(
                 y='y:Q'
             )
+
+            st.write(alt.layer(line, hline_180, hline_50).properties(title='Glucose Graph'))
 
         else:
             st.error("Patient ID not found.")
