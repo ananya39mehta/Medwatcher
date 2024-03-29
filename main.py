@@ -35,16 +35,17 @@ def login():
 
     if not st.session_state.logged_in:
         st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-image: url("https://gov-web-sing.s3.ap-southeast-1.amazonaws.com/uploads/2023/1/Wordpress-featured-images-48-1672795987342.jpg");
-            background-attachment: fixed;
-            background-size: cover
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
+            f"""
+            <style>
+            .stApp {{
+                background-image: url("https://gov-web-sing.s3.ap-southeast-1.amazonaws.com/uploads/2023/1/Wordpress-featured-images-48-1672795987342.jpg");
+                background-attachment: fixed;
+                background-size: cover;
+                background-color: rgba(255, 255, 255, 0.5); /* Adjust the alpha value here (0.5 for 50% transparency) */
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
         )
         st.write("<div align='center'><h1>Welcome to MedWatcher</h1></div>", unsafe_allow_html=True)
         st.markdown("---")
