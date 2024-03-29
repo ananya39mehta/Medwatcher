@@ -7,20 +7,12 @@ from patients import patients  # Importing the patients function
 USERNAME = "admin"
 PASSWORD = "admin"
 
-# Read background image as binary stream
-def load_image(image_path):
-    with open(image_path, 'rb') as f:
-        image = f.read()
-    return image
-
-background_image = load_image("Login.jpeg")
-
 def login():
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
 
     if not st.session_state.logged_in:
-        st.image(background_image, use_column_width=True)
+        st.write("<style>body { background-image: url('Login.jpeg'); background-size: cover; }</style>", unsafe_allow_html=True)
 
         st.write("# Welcome to MedWatcher")
         st.write("Please log in")
