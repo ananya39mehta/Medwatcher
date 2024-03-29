@@ -66,7 +66,7 @@ def login():
 def home():
     st.markdown("""
     <div style="display: flex; justify-content: flex-start;">
-        <img src="MedWatchersLogo.jpeg" style="width: 100px;">
+        <img src="https://github.com/ananya39mehta/Medwatcher/blob/main/MedWatchersLogo.jpeg" style="width: 100px;">
     </div>
     """, unsafe_allow_html=True)
     st.write("# Home Page")
