@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def patients():
     st.write("## Patients Page")
@@ -35,9 +36,14 @@ def patients():
                 # Count occurrences of each task
                 task_counts = filtered_data['Task'].value_counts()
 
-                # Create a pie chart using Streamlit
+                # Create a pie chart using Matplotlib
+                fig, ax = plt.subplots()
+                ax.pie(task_counts, labels=task_counts.index, autopct='%1.1f%%')
+                ax.set_title("Tasks Leading to Deviations from 50-180 Range")
+                
+                # Display the pie chart using Streamlit
                 st.write("### Tasks Leading to Deviations from 50-180 Range:")
-                st.write(task_counts.plot.pie(autopct='%1.1f%%'))
+                st.pyplot(fig)
 
         else:
             st.error("Patient ID not found.")
