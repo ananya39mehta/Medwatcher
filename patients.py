@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
 
 def patients():
     st.write("## Patients Page")
@@ -18,25 +17,13 @@ def patients():
             st.write("### Glucose Data:")
             st.write(glucose_data)
 
-            # Plot the glucose data using Altair chart
-            chart = alt.Chart(glucose_data).mark_line().encode(
-                x='Date:T',
-                y='Glucose:Q'
-            ).properties(
-                width=600,
-                height=400
-            )
-
-            # Label only every alternate three points on x-axis
-            x_labels = glucose_data.iloc[::3]['Date'].tolist()
-
-            # Render the chart with Altair and Streamlit
-            st.altair_chart(chart, use_container_width=True)
-
-            # Set x-axis labels
+            # Plot the glucose data
             st.write("### Glucose Graph:")
-            st.write("Alternate three points on x-axis labeled:")
-            st.write(x_labels)
+            st.line_chart(glucose_data.set_index('Date')['Glucose'])
+
+            # Get every alternate three dates for x-axis labeling
+            x_labels = glucose_data.iloc[::3]['Date'].tolist()
+            st.pyplot().set_xticklabels(x_labels, rotation=45, ha='right')
 
         else:
             st.error("Patient ID not found.")
