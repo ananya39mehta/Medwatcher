@@ -34,11 +34,11 @@ def patients():
             )
 
             # Add horizontal lines
-            hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3]).encode(
+            hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=2).encode(
                 y='y:Q'
             )
 
-            hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3]).encode(
+            hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=2).encode(
                 y='y:Q'
             )
 
