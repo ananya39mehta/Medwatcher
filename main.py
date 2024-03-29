@@ -1,6 +1,6 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 import patients, alerts, contacts
-import pandas as pd
 
 # Hardcoded username and password
 USERNAME = "admin"
@@ -35,25 +35,38 @@ def home():
     st.write("Welcome to MedWatcher!")
     st.write("Please navigate using the sidebar.")
 
+def about_us():
+    st.write("## About Us")
+    st.write("This is the About Us page.")
+    st.write("Here, you can provide information about your application.")
+
 class MultiApp:
     def __init__(self):
-        pass
+        self.apps = []
+
+    def add_app(self, title, function):
+        self.apps.append({
+            "title": title,
+            "function": function
+        })
 
     def run(self):
         if not login():
             return
 
-        st.sidebar.title("MedWatcher")
-        app = st.sidebar.radio("Navigation", ['Home', 'Patients'])
+        with st.sidebar:
+            option = st.selectbox("Menu", ["Home", "Patients", "Alerts", "Contacts", "About Us"])
 
-        if app == "Home":
+        if option == "Home":
             home()
-        elif app == "Patients":
+        elif option == "Patients":
             patients.app()
-        elif app == 'Alerts':
+        elif option == 'Alerts':
             alerts.app()
-        elif app == 'Contacts':
+        elif option == 'Contacts':
             contacts.app()
+        elif option == 'About Us':
+            about_us()
 
 if __name__ == "__main__":
     multi_app = MultiApp()
