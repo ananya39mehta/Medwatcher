@@ -228,6 +228,7 @@ class MultiApp:
             )
             alerts.app()
         elif app == 'Patients':
+            col1, col2, col3 ,col4, col5 ,col6= st.columns(6)
             # Displaying brand logo with reduced size
             with col1:
                 st.image("MedWatchersLogo.jpeg", width=150)
