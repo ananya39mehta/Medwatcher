@@ -65,7 +65,7 @@ def login():
 
 def home():
     # Displaying brand logo and another image side by side
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3 ,col4 = st.columns(4)
     
     # Displaying brand logo with reduced size
     with col1:
