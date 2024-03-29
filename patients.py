@@ -34,15 +34,35 @@ def patients():
             )
 
             # Add horizontal lines
-            hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=5).encode(
+            hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=2).encode(
                 y='y:Q'
             )
 
-            hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=5).encode(
+            hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=2).encode(
                 y='y:Q'
             )
 
             st.write(alt.layer(line, hline_180, hline_50).properties(title='Glucose Graph'))
+
+            # Filter points not between 50 and 180
+            filtered_data = glucose_data[(glucose_data['Glucose'] < 50) | (glucose_data['Glucose'] > 180)]
+
+            if not filtered_data.empty:
+                st.write("### Points Outside 50-180 Range:")
+                st.write(filtered_data)
+
+                # Create Altair scatter plot
+                scatter = alt.Chart(filtered_data.reset_index()).mark_circle(color='red').encode(
+                    x='Date:T',
+                    y='Glucose:Q',
+                    tooltip=['Date', 'Glucose', 'Task']
+                ).properties(
+                    width=600,
+                    height=400
+                ).interactive()
+
+                st.write("### Points Outside 50-180 Range Graph:")
+                st.write(scatter)
 
         else:
             st.error("Patient ID not found.")
