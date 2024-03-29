@@ -9,11 +9,8 @@ PASSWORD = "admin"
 
 # Custom CSS styles
 st.markdown(
-    f"""
+    """
     <style>
-    .stApp {
-        background-color: #f0f2f6;
-    }
     .stTextInput>div>div>input {
         background-color: #ffffff;
     }
