@@ -25,8 +25,6 @@ def patients():
 
             st.write("### Glucose Graph:")
             st.line_chart(glucose_data['Glucose'])
-
-            st.write("### Glucose Graph:")
             
 
             # Filter points not between 50 and 180
