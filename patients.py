@@ -20,6 +20,10 @@ def patients():
             glucose_data['Date'] = pd.to_datetime(glucose_data['Date'])
             glucose_data.set_index('Date', inplace=True)
 
+            # Drop the 'Unnamed: 0' column if it exists
+            if 'Unnamed: 0' in glucose_data.columns:
+                glucose_data.drop(columns=['Unnamed: 0'], inplace=True)
+
             st.write("### Glucose Data:")
             st.write(glucose_data)
 
