@@ -9,7 +9,7 @@ PASSWORD = "admin"
 
 # Custom CSS styles
 st.markdown(
-    f""
+    f"""
     <style>
     .stTextInput>div>div>input {
         background-color: #ffffff;
@@ -33,7 +33,7 @@ st.markdown(
         z-index: -1; /* Ensure the background image is behind other content */
     }
     </style>
-    "",
+    """,
     unsafe_allow_html=True
 )
 
