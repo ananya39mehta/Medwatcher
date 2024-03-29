@@ -64,9 +64,17 @@ def login():
     return st.session_state.logged_in
 
 def home():
-    # Displaying brand logo above the "Home" word near the center
-    st.image("MedWatchersLogo.jpeg", use_column_width=True)
-    st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png")
+    # Displaying brand logo and another image side by side
+    col1, col2 = st.columns(2)
+    
+    # Displaying brand logo with reduced size
+    with col1:
+        st.image("MedWatchersLogo.jpeg", width=150)
+    
+    # Displaying another image
+    with col2:
+        st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=150)
+
     st.write("# Home Page")
     st.write("Welcome to MedWatcher!")
     st.write("MedWatcher is a dashboard application designed to help diabetic patients and healthcare providers monitor and manage glucose levels effectively.")
@@ -75,9 +83,6 @@ def home():
     st.write("- Analyze glucose trends over time with interactive charts.")
     st.write("- Receive alerts for glucose levels outside the normal range.")
     st.write("To get started, navigate using the sidebar on the left.")
-
-
-
 
 def about_us():
     st.write("# About Us")
