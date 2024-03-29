@@ -11,17 +11,17 @@ PASSWORD = "admin"
 st.markdown(
     f"""
     <style>
-    .stTextInput>div>div>input {
+    .stTextInput>div>div>input {{
         background-color: #ffffff;
-    }
-    .stButton>button {
+    }}
+    .stButton>button {{
         background-color: #02ab21;
         color: white;
-    }
-    .stButton>button:hover {
+    }}
+    .stButton>button:hover {{
         background-color: #028c19;
-    }
-    .background-image {
+    }}
+    .background-image {{
         position: fixed;
         top: 0;
         left: 0;
@@ -31,7 +31,7 @@ st.markdown(
         background-size: cover;
         opacity: 0.5; /* Adjust the opacity value here (0.5 for 50% opacity) */
         z-index: -1; /* Ensure the background image is behind other content */
-    }
+    }}
     </style>
     """,
     unsafe_allow_html=True
@@ -46,8 +46,8 @@ def login():
         st.markdown("---")
         st.write("<h2>Login</h2>", unsafe_allow_html=True)
 
-        username = st.text_input("Username")
-        password = st.text_input("Password", type="password")
+        username = st.text_input("Username", key="username")  # Added key
+        password = st.text_input("Password", type="password", key="password")  # Added key
 
         if st.button("Login"):
             if username == USERNAME and password == PASSWORD:
