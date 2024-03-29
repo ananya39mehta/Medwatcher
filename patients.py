@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import altair as alt
 
 def patients():
     st.write("## Patients Page")
@@ -17,31 +18,16 @@ def patients():
             st.write("### Glucose Data:")
             st.write(glucose_data)
 
-            # Plot the glucose data
-            st.write("### Glucose Graph:")
-            st.line_chart(glucose_data.set_index('Date')['Glucose'])
+            # Plot the glucose data using Altair
+            chart = alt.Chart(glucose_data).mark_line().encode(
+                x='Date:T',
+                y='Glucose:Q',
+                tooltip=['Date:T', 'Glucose:Q']
+            ).properties(width=600, height=400)
 
-            # Customize x-axis tick labels
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showfig_repr', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.write("### Glucose Graph:")
+            st.altair_chart(chart, use_container_width=True)
+
         else:
             st.error("Patient ID not found.")
 
