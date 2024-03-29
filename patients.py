@@ -1,8 +1,9 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
+import matplotlib.pyplot as plt
 
 def patients():
+    #st.write("## Patients Page")
     patient_id = st.text_input("Enter Patient ID:")
     if patient_id:
         main_df = pd.read_csv("main.csv")
@@ -23,25 +24,8 @@ def patients():
             st.write(glucose_data)
 
             st.write("### Glucose Graph:")
-            # Create a line chart using Altair
-            line = alt.Chart(glucose_data.reset_index()).mark_line().encode(
-                x='Date:T',
-                y='Glucose:Q'
-            ).properties(
-                width=600,
-                height=400
-            )
-
-            # Add horizontal lines
-            hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3]).encode(
-                y='y:Q'
-            )
-
-            hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3]).encode(
-                y='y:Q'
-            )
-
-            st.write(alt.layer(line, hline_180, hline_50).properties(title='Glucose Graph'))
+            st.line_chart(glucose_data['Glucose'])
+            
 
             # Filter points not between 50 and 180
             filtered_data = glucose_data[(glucose_data['Glucose'] < 50) | (glucose_data['Glucose'] > 180)]
@@ -51,21 +35,16 @@ def patients():
                 st.write(filtered_data)
 
                 # Count occurrences of each task
-                task_counts = filtered_data['Task'].value_counts().reset_index()
-                task_counts.columns = ['Task', 'Count']
+                task_counts = filtered_data['Task'].value_counts()
 
-                # Create a pie chart using Altair
-                pie_chart = alt.Chart(task_counts).mark_bar().encode(
-                    x=alt.X('Task:N', title='Task'),
-                    y=alt.Y('Count:Q', title='Count'),
-                    tooltip=['Task', 'Count']
-                ).properties(
-                    width=600,
-                    height=400
-                )
-
+                # Create a pie chart using Matplotlib
+                fig, ax = plt.subplots()
+                ax.pie(task_counts, labels=task_counts.index, autopct='%1.1f%%')
+                ax.set_title("Tasks Leading to Deviations from 50-180 Range")
+                
+                # Display the pie chart using Streamlit
                 st.write("### Tasks Leading to Deviations from 50-180 Range:")
-                st.write(pie_chart)
+                st.pyplot(fig)
 
         else:
             st.error("Patient ID not found.")
