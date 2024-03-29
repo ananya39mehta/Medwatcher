@@ -167,6 +167,11 @@ def about_us():
         st.image("img4.jpeg", caption="Mayank Sahai", width=100, use_column_width=False, output_format='png')
         #st.write("**Mayank Sahai**")
         st.write("smayank2412@gmail.com")
+        
+def add_patients():
+    st.write("# Add Patients")
+    
+
 
 class MultiApp:
     def __init__(self):
@@ -256,6 +261,37 @@ class MultiApp:
             )
             st.write("# Patients")
             patients()
+            
+        elif app == 'Add Patients':  # Handling 'Add Patients' page
+            col1, col2, col3 ,col4, col5 ,col6= st.columns(6)
+    
+            # Displaying brand logo with reduced size
+            with col1:
+                st.image("MedWatchersLogo.jpeg", width=150)
+            
+            # Displaying another image
+            with col2:
+                st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=800)
+        
+            # Applying custom CSS to reduce space between columns and stretch image
+            st.markdown(
+                """
+                <style>
+                .css-1l02zno {
+                    margin-right: -20px !important;
+                    margin-left: -20px !important;
+                }
+                .css-1s9erse img {
+                    object-fit: fill;
+                    width: 100%;
+                    height: 100%;
+                }
+                </style>
+                """,
+                unsafe_allow_html=True
+            )
+            add_patients()    
+            
         elif app == 'About Us':  # Handling 'About Us' page
             about_us()
 
