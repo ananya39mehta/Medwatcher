@@ -68,11 +68,14 @@ class MultiApp:
             home()
         elif app == "Patients":
             patient_data = patients.app()
-            if not patient_data.empty:
-                st.subheader("Patient Information")
-                st.write(patient_data)
+            if patient_data is not None and isinstance(patient_data, pd.DataFrame):
+                if not patient_data.empty:
+                    st.subheader("Patient Information")
+                    st.write(patient_data)
+                else:
+                    st.warning("Patient not found.")
             else:
-                st.warning("Patient not found.")
+                st.error("Error fetching patient data.")
         elif app == 'Alerts':
             alerts.app()
         elif app == 'Contacts':
