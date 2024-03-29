@@ -6,7 +6,7 @@ from streamlit_option_menu import option_menu
 # Hardcoded username and password
 USERNAME = "admin"
 PASSWORD = "admin"
-GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"  # Replace with your GitHub token
+GITHUB_TOKEN = "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"  # Replace with your GitHub token
 REPO_NAME = "Medwatcher"  # Replace with your repository name
 
 # Function to add new patient
