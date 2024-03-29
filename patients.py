@@ -7,7 +7,7 @@ def patients():
     patient_id = st.text_input("Enter Patient ID:")
     if patient_id:
         main_df = pd.read_csv("main.csv")
-        patient_details = main_df[main_df['patientid'] == int(patient_id)]
+        patient_details = main_df[main_df['Patient ID'] == int(patient_id)]
         if not patient_details.empty:
             st.write("### Patient Details:")
             st.write(patient_details)
