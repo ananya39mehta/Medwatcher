@@ -14,7 +14,7 @@ def login():
     if not st.session_state.logged_in:
         st.write("<style>body { background-image: url('Login.jpeg'); background-size: cover; }</style>", unsafe_allow_html=True)
 
-        st.write("# /tWelcome to MedWatcher")
+        st.write("# \tWelcome to MedWatcher")
         st.write("Please log in")
 
         username = st.text_input("Username")
