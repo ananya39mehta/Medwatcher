@@ -64,17 +64,17 @@ def login():
     return st.session_state.logged_in
 
 def home():
-    # Displaying brand logo and another image side by side with the same height and minimal space between them
-    st.write("<div style='display:flex;'>", unsafe_allow_html=True)
+    # Displaying brand logo and another image side by side with equal height and minimal space between them
+    st.write("<div style='display:flex; align-items:center;'>", unsafe_allow_html=True)
     
-    # Displaying brand logo with reduced size
-    st.image("MedWatchersLogo.jpeg", width=150, use_column_width=False)
+    # Displaying brand logo with specified height and flexible width
+    st.image("MedWatchersLogo.jpeg", height=200, use_column_width=False)
     
     # Adding a margin to create space between the images
     st.write("<div style='margin: 0px 10px;'></div>", unsafe_allow_html=True)
     
-    # Displaying another image
-    st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=150, use_column_width=False)
+    # Displaying another image with specified height and flexible width
+    st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", height=200, use_column_width=False)
     
     st.write("</div>", unsafe_allow_html=True)
 
@@ -86,6 +86,7 @@ def home():
     st.write("- Analyze glucose trends over time with interactive charts.")
     st.write("- Receive alerts for glucose levels outside the normal range.")
     st.write("To get started, navigate using the sidebar on the left.")
+
 
 
 
