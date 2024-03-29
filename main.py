@@ -17,7 +17,7 @@ def login():
         st.session_state.logged_in = False
 
     if not st.session_state.logged_in:
-        st.write("## Login")
+        st.markdown("## Login")
 
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
@@ -32,7 +32,7 @@ def login():
     return st.session_state.logged_in
 
 def home():
-    st.write("## Home Page")
+    st.markdown("## Home Page")
     st.write("Welcome to MedWatcher!")
     st.write("Please navigate using the sidebar.")
 
@@ -70,7 +70,8 @@ class MultiApp:
             with st.markdown('## Alerts'):
                 alerts.app()
         elif app == 'Patients':
-            patients()
+            with st.markdown('## Patients'):
+                patients()
 
 if __name__ == "__main__":
     multi_app = MultiApp()
