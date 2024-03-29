@@ -15,6 +15,10 @@ def patients():
             patient_file = f"Patient{patient_id}.csv"
             glucose_data = pd.read_csv(patient_file)
 
+            # Exclude the 'Unnamed: 0' column if present
+            if 'Unnamed: 0' in glucose_data.columns:
+                glucose_data.drop(columns=['Unnamed: 0'], inplace=True)
+
             # Print columns of the glucose_data DataFrame
             st.write("### Glucose Data Columns:")
             st.write(glucose_data.columns.tolist())
