@@ -13,17 +13,22 @@ st.set_page_config(
 )
 
 def login():
-    st.write("## Login")
+    if "logged_in" not in st.session_state:
+        st.session_state.logged_in = False
 
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
+    if not st.session_state.logged_in:
+        st.write("## Login")
 
-    if st.button("Login"):
-        if username == USERNAME and password == PASSWORD:
-            return True
-        else:
-            st.error("Incorrect username or password. Please try again.")
-            return False
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
+
+        if st.button("Login"):
+            if username == USERNAME and password == PASSWORD:
+                st.session_state.logged_in = True
+            else:
+                st.error("Incorrect username or password. Please try again.")
+
+    return st.session_state.logged_in
 
 class MultiApp:
     def __init__(self):
