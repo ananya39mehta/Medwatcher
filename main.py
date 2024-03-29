@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import patients, preferancerange, alerts, contacts
+import patients, alerts, contacts
 import pandas as pd
 
 st.set_page_config(
@@ -22,7 +22,7 @@ class MultiApp:
         with st.sidebar:
             app = option_menu(
                 menu_title="MedWatcher",
-                options=['Patients', 'Preferance Range', 'Alerts', 'Contacts', 'Individual Patient Data'],  # Added 'Individual Patient Data' option
+                options=['Patients', 'Alerts', 'Contacts', 'Individual Patient Data'],  # Removed 'Preference Range' option
                 default_index=1,
                 styles={
                     "container": {"padding": "5!important", "background-color": 'black'},
@@ -35,8 +35,6 @@ class MultiApp:
 
         if app == "Patients":
             patients.app()
-        elif app == "Preferance Range":
-            preferancerange.app()
         elif app == 'Alerts':
             alerts.app()
         elif app == 'Contacts':
@@ -68,13 +66,4 @@ def display_individual_patient_data():
         
         # Display graphs related to patient's health data
         st.write("#### Health Data:")
-        # Add code here to display graphs based on patient's health data
-        # For example:
-        st.line_chart(patient_data_df['Heart rate'])
-        st.line_chart(patient_data_df['Systolic blood pressure'])
-    except FileNotFoundError:
-        st.write("Please enter a valid Patient ID.")
-
-if __name__ == "__main__":
-    multi_app = MultiApp()
-    multi_app.run()
+        # Add code here
