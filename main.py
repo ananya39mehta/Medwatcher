@@ -41,7 +41,7 @@ def login():
                 background-image: url("https://gov-web-sing.s3.ap-southeast-1.amazonaws.com/uploads/2023/1/Wordpress-featured-images-48-1672795987342.jpg");
                 background-attachment: fixed;
                 background-size: cover;
-                opacity: 0.5; /* Adjust the opacity value here (0.8 for 80% opacity) */
+                opacity: 0.7; /* Adjust the opacity value here (0.8 for 80% opacity) */
             }}
             </style>
             """,
