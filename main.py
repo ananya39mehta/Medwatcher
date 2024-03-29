@@ -1,7 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import patients, alerts, contacts
-import pandas as pd
+import alerts, contacts
 
 # Hardcoded username and password
 USERNAME = "admin"
@@ -53,7 +52,7 @@ class MultiApp:
         with st.sidebar:
             app = option_menu(
                 menu_title="MedWatcher",
-                options=['Home', 'Patients', 'Alerts', 'Contacts'],  # Removed 'Individual Patient Data' option
+                options=['Home', 'Alerts', 'Contacts'],  # Removed 'Patients' option
                 default_index=0,  # Set default index to 'Home'
                 styles={
                     "container": {"padding": "5!important", "background-color": 'black'},
@@ -66,16 +65,6 @@ class MultiApp:
 
         if app == "Home":
             home()
-        elif app == "Patients":
-            patient_data = patients.app()
-            if patient_data is not None and isinstance(patient_data, pd.DataFrame):
-                if not patient_data.empty:
-                    st.subheader("Patient Information")
-                    st.write(patient_data)
-                else:
-                    st.warning("Patient not found.")
-            else:
-                st.error("Error fetching patient data.")
         elif app == 'Alerts':
             alerts.app()
         elif app == 'Contacts':
