@@ -3,18 +3,18 @@ import pandas as pd
 
 def search_patient(patients_df, search_id):
     result = patients_df[patients_df["Patient ID"] == search_id]
-    return result
+    return result if not result.empty else None
 
 def display_patient_info(patient_data):
     st.subheader("Patient Information")
-    if not patient_data.empty:
+    if patient_data is not None:
         st.write(patient_data)
     else:
         st.warning("Patient not found.")
 
 def modify_patient_history(patient_data):
     st.subheader("Modify Patient History")
-    if not patient_data.empty:
+    if patient_data is not None:
         # Add functionality to modify patient history
         st.write("Patient history modification feature coming soon...")
     else:
@@ -22,7 +22,7 @@ def modify_patient_history(patient_data):
 
 def display_patient_phone_number(patient_data):
     st.subheader("Patient Phone Number")
-    if not patient_data.empty:
+    if patient_data is not None:
         phone_number = patient_data.iloc[0]["Phone Number"]
         st.write(f"Phone Number: {phone_number}")
     else:
