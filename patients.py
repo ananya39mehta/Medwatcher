@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
 
 def patients():
     st.write("## Patients Page")
@@ -18,15 +17,9 @@ def patients():
             st.write("### Glucose Data:")
             st.write(glucose_data)
 
-            # Plot the glucose data using Altair
-            chart = alt.Chart(glucose_data).mark_line().encode(
-                x='Date:T',
-                y='Glucose:Q',
-                tooltip=['Date:T', 'Glucose:Q']
-            ).properties(width=600, height=400)
-
+            # Plot the glucose data using Streamlit's line chart
             st.write("### Glucose Graph:")
-            st.altair_chart(chart, use_container_width=True)
+            st.line_chart(glucose_data.set_index('Date')['Glucose'])
 
         else:
             st.error("Patient ID not found.")
