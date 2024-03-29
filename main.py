@@ -38,7 +38,7 @@ def login():
         f"""
         <style>
         .stApp {{
-            background-image: url("Login.jpeg");
+            background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fgovinsider.asia%2Fintl-en%2Farticle%2Fdata-is-giving-rise-to-better-medical-practice-heres-how&psig=AOvVaw38OKVpTQ2gMtm7Keu46kyU&ust=1711819174055000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMjzlcX9mYUDFQAAAAAdAAAAABAJ");
             background-attachment: fixed;
             background-size: cover
         }}
