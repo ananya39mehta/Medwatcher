@@ -16,12 +16,8 @@ def patients():
             glucose_data = pd.read_csv(patient_file)
             st.write("### Glucose Data:")
             st.write(glucose_data)
-
-            # Plot the glucose data using Streamlit's line chart
             st.write("### Glucose Graph:")
             st.line_chart(glucose_data.set_index('Date')['Glucose'])
 
         else:
             st.error("Patient ID not found.")
-
-patients()
