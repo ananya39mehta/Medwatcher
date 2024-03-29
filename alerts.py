@@ -1,14 +1,14 @@
 import streamlit as st
 import pandas as pd
 
-def view_alerts():
+'''def view_alerts():
     st.subheader("View Alerts")
     # Load alerts from database or any other source
     # For demo purposes, here's a sample list of alerts
-    alerts = [
-        {"ID": 1, "Message": "Alert 1: High Temperature"},
-        {"ID": 2, "Message": "Alert 2: Low Oxygen Saturation"},
-        {"ID": 3, "Message": "Alert 3: High Blood Pressure"}
+    #alerts = [
+     #   {"ID": 1, "Message": "Alert 1: High Temperature"},
+     #   {"ID": 2, "Message": "Alert 2: Low Oxygen Saturation"},
+      #  {"ID": 3, "Message": "Alert 3: High Blood Pressure"}
     ]
 
     df = pd.DataFrame(alerts)
@@ -32,20 +32,20 @@ def delete_alert():
 
     if st.button("Delete"):
         # Delete alert from database or perform any other action
-        st.success(f"Alert deleted: {alert_to_delete}")
+        st.success(f"Alert deleted: {alert_to_delete}")'''
 
 def app():
     st.title("Alerts")
 
-    st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Go to", ["View Alerts", "Add Alert", "Delete Alert"])
+    #st.sidebar.title("Navigation")
+    #page = st.sidebar.radio("Go to", ["View Alerts", "Add Alert", "Delete Alert"])
 
-    if page == "View Alerts":
+    '''if page == "View Alerts":
         view_alerts()
     elif page == "Add Alert":
         add_alert()
     elif page == "Delete Alert":
-        delete_alert()
+        delete_alert()'''
 
 if __name__ == "__main__":
     app()
