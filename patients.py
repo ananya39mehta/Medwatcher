@@ -21,10 +21,27 @@ def patients():
             st.write("### Glucose Graph:")
             st.line_chart(glucose_data.set_index('Date')['Glucose'])
 
-            # Get every alternate three dates for x-axis labeling
-            x_labels = glucose_data.iloc[::3]['Date'].tolist()
-            st.pyplot().set_xticklabels(x_labels, rotation=45, ha='right')
-
+            # Customize x-axis tick labels
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showfig_repr', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.set_option('deprecation.showPyplotGlobalUse', False)
         else:
             st.error("Patient ID not found.")
 
