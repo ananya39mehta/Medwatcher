@@ -190,7 +190,7 @@ class MultiApp:
         with st.sidebar:
             app = option_menu(
                 menu_title="MedWatcher",
-                options=['Home', 'Patients', 'Alerts', 'About Us'],  # Added 'About Us' option
+                options=['Home', 'Patients', 'Add Patients','Alerts', 'About Us'],  # Added 'About Us' option
                 default_index=0,
                 styles={
                     "container": {"padding": "5!important", "background-color": 'black'},
