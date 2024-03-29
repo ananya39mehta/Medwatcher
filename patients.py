@@ -55,17 +55,18 @@ def patients():
                 st.write(filtered_data)
 
                 # Count occurrences of each task
-                task_counts = filtered_data['Task'].value_counts()
+                task_counts = filtered_data['Task'].value_counts().reset_index()
+                task_counts.columns = ['Task', 'Count']
 
                 # Create a pie chart using Altair
-                pie_chart = alt.Chart(task_counts.reset_index()).mark_bar().encode(
-                    x=alt.X('index:N', title='Task'),
-                    y=alt.Y('Task:Q', title='Count'),
-                    tooltip=['index', 'Task']
+                pie_chart = alt.Chart(task_counts).mark_bar().encode(
+                    x='Task:N',
+                    y='Count:Q',
+                    tooltip=['Task:N', 'Count:Q']
                 ).properties(
                     width=600,
                     height=400
-                ).interactive()
+                )
 
                 st.write("### Tasks Leading to Deviations from 50-180 Range:")
                 st.write(pie_chart)
