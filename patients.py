@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def patients():
-    st.write("## Patients Page")
+    #st.write("## Patients Page")
     patient_id = st.text_input("Enter Patient ID:")
     if patient_id:
         main_df = pd.read_csv("main.csv")
