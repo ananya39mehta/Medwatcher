@@ -68,8 +68,6 @@ class MultiApp:
             home()
         elif app == 'Alerts':
             alerts.app()
-        elif app == 'Contacts':
-            contacts.app()
         elif app == 'Patients':
             patients()
 
