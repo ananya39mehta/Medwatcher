@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
 
 def patients():
     st.write("## Patients Page")
@@ -24,25 +23,7 @@ def patients():
             st.write(glucose_data)
 
             st.write("### Glucose Graph:")
-            # Create Altair line chart
-            line = alt.Chart(glucose_data.reset_index()).mark_line().encode(
-                x='Date:T',
-                y='Glucose:Q'
-            ).properties(
-                width=600,
-                height=400
-            )
-
-            # Add horizontal lines
-            hline_180 = alt.Chart(pd.DataFrame({'y': [180]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=3.5).encode(
-                y='y:Q'
-            )
-
-            hline_50 = alt.Chart(pd.DataFrame({'y': [50]})).mark_rule(color='red', strokeDash=[3,3], strokeWidth=3.5).encode(
-                y='y:Q'
-            )
-
-            st.write(alt.layer(line, hline_180, hline_50).properties(title='Glucose Graph'))
+            st.line_chart(glucose_data['Glucose'])
 
             # Filter points not between 50 and 180
             filtered_data = glucose_data[(glucose_data['Glucose'] < 50) | (glucose_data['Glucose'] > 180)]
@@ -54,18 +35,9 @@ def patients():
                 # Count occurrences of each task
                 task_counts = filtered_data['Task'].value_counts()
 
-                # Create Altair pie chart
-                pie_chart = alt.Chart(task_counts.reset_index()).mark_bar().encode(
-                    x='Task:N',
-                    y='index:N',
-                    tooltip=['index', 'Task']
-                ).properties(
-                    width=600,
-                    height=400
-                ).interactive()
-
+                # Create a pie chart using Streamlit
                 st.write("### Tasks Leading to Deviations from 50-180 Range:")
-                st.write(pie_chart)
+                st.write(task_counts.plot.pie(autopct='%1.1f%%'))
 
         else:
             st.error("Patient ID not found.")
