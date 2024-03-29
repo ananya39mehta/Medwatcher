@@ -29,6 +29,8 @@ def patients():
 
             # Label only every alternate three points on x-axis
             x_labels = glucose_data.iloc[::3]['Date'].tolist()
+
+            # Render the chart with Altair and Streamlit
             st.altair_chart(chart, use_container_width=True)
 
             # Set x-axis labels
