@@ -65,14 +65,14 @@ def login():
 
 def home():
     # Displaying brand logo and another image side by side
-    col1, col2, col3 ,col4 = st.columns(4)
+    col1, col2, col3 ,col4, col5 = st.columns(5)
     
     # Displaying brand logo with reduced size
-    with col1:
+    with col2:
         st.image("MedWatchersLogo.jpeg", width=150)
     
     # Displaying another image
-    with col2:
+    with col3:
         st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=800)
 
     # Applying custom CSS to reduce space between columns and stretch image
