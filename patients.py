@@ -21,8 +21,8 @@ def patients():
             # Plot the glucose data using Altair
             chart = alt.Chart(glucose_data).mark_line().encode(
                 x='Date:T',
-                y='Glucose:Q',
-                tooltip=['Date:T', 'Glucose:Q']
+                y='Glucose:Q',  # This encodes the 'Glucose' column as the y-axis values
+                tooltip=['Date:T', 'Glucose:Q']  # This includes the 'Date' and 'Glucose' values in the tooltip
             ).properties(width=600, height=400)
 
             st.write("### Glucose Graph:")
