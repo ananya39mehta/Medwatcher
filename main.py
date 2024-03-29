@@ -64,11 +64,7 @@ def login():
     return st.session_state.logged_in
 
 def home():
-    st.markdown("""
-    <div style="display: flex; justify-content: flex-start;">
-        <img src="https://github.com/ananya39mehta/Medwatcher/blob/main/MedWatchersLogo.jpeg" style="width: 100px;">
-    </div>
-    """, unsafe_allow_html=True)
+    st.image("https://github.com/ananya39mehta/Medwatcher/blob/main/MedWatchersLogo.jpeg", width=100)
     st.write("# Home Page")
     st.write("Welcome to MedWatcher!")
     st.write("MedWatcher is a dashboard application designed to help diabetic patients and healthcare providers monitor and manage glucose levels effectively.")
