@@ -32,6 +32,10 @@ def patients():
 
             st.write("### Glucose Graph:")
             st.line_chart(glucose_data['Glucose'])
+            
+            # Add horizontal lines at y=180 and y=50
+            chart.add_hline(y=180, color='red')
+            chart.add_hline(y=50, color='red')
 
         else:
             st.error("Patient ID not found.")
