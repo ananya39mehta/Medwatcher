@@ -67,7 +67,12 @@ class MultiApp:
         if app == "Home":
             home()
         elif app == "Patients":
-            patients.app()
+            patient_data = patients.app()
+            if not patient_data.empty:
+                st.subheader("Patient Information")
+                st.write(patient_data)
+            else:
+                st.warning("Patient not found.")
         elif app == 'Alerts':
             alerts.app()
         elif app == 'Contacts':
