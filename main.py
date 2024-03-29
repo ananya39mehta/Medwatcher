@@ -1,30 +1,40 @@
 import streamlit as st
+from PIL import Image
 from streamlit_option_menu import option_menu
 import alerts
 from patients import patients  # Importing the patients function
+import base64
 
 # Hardcoded username and password
 USERNAME = "admin"
 PASSWORD = "admin"
 
-# Custom HTML and CSS for background image
-background_html = """
+# Load background image
+@st.cache
+def load_image(image_path):
+    img = Image.open(image_path)
+    return img
+
+background_image = load_image("https://github.com/ananya39mehta/Medwatcher/blob/main/Login.jpeg")
+
+# Custom CSS for background image
+background_css = f"""
 <style>
-body {
-    background-image: url('https://github.com/ananya39mehta/Medwatcher/blob/main/Login.jpeg');
+body {{
+    background-image: url('data:image/jpeg;base64,{base64.b64encode(background_image.getvalue()).decode()}');
     background-size: cover;
-}
-.login-container {
+}}
+.login-container {{
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     margin: auto;
     max-width: 400px;
-}
-.login-title {
+}}
+.login-title {{
     text-align: center;
     margin-bottom: 20px;
-}
+}}
 </style>
 """
 
@@ -93,8 +103,8 @@ class MultiApp:
             patients()
 
 if __name__ == "__main__":
-    # Injecting background HTML/CSS
-    st.markdown(background_html, unsafe_allow_html=True)
+    # Injecting background CSS
+    st.markdown(background_css, unsafe_allow_html=True)
 
     multi_app = MultiApp()
     multi_app.run()
