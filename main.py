@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import Image
 from streamlit_option_menu import option_menu
 import alerts
 from patients import patients  # Importing the patients function
@@ -8,11 +7,11 @@ from patients import patients  # Importing the patients function
 USERNAME = "admin"
 PASSWORD = "admin"
 
-# Load background image
-@st.cache
+# Read background image as binary stream
 def load_image(image_path):
-    img = Image.open(image_path)
-    return img
+    with open(image_path, 'rb') as f:
+        image = f.read()
+    return image
 
 background_image = load_image("Login.jpeg")
 
