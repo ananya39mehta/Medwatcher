@@ -1,178 +1,68 @@
+import pandas as pd
+from github import Github
 import streamlit as st
 from streamlit_option_menu import option_menu
-import alerts
-from patients import patients  # Importing the patients function
 
 # Hardcoded username and password
 USERNAME = "admin"
 PASSWORD = "admin"
 
-# Custom CSS styles
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-color: #f0f2f6;
-    }
-    .stTextInput>div>div>input {
-        background-color: #ffffff;
-    }
-    .stButton>button {
-        background-color: #02ab21;
-        color: white;
-    }
-    .stButton>button:hover {
-        background-color: #028c19;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# Function to add new patient
+def add_new_patient(patient_id, name, age, gender, phone_number):
+    # Load main.csv from GitHub
+    g = Github("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")
+    repo = g.get_repo("Medwatcher")
+    contents = repo.get_contents("main.csv")
+    main_csv = pd.read_csv(contents.download_url)
 
-def login():
-    if "logged_in" not in st.session_state:
-        st.session_state.logged_in = False
+    # Check if patient_id already exists
+    if patient_id in main_csv['Patient ID'].values:
+        return "Error: Patient ID already exists"
 
-    if not st.session_state.logged_in:
-        st.markdown(
-            f"""
-            <style>
-            .stApp {{
-                background-image: url("https://t3.ftcdn.net/jpg/02/81/21/10/360_F_281211036_24KPea5poawt4mXYlEjRUwsCgomtjoVc.jpg");
-                background-attachment: fixed;
-                background-size: cover;
-                opacity: 0.9; /* Adjust the opacity value here (0.8 for 80% opacity) */
-            }}
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
-        st.write("<div align='center'><h1>Welcome to MedWatcher</h1></div>", unsafe_allow_html=True)
-        st.markdown("---")
-        st.write("<h2>Login</h2>", unsafe_allow_html=True)
+    # Add new patient to main.csv
+    new_patient = {'Patient ID': patient_id, 'Name': name, 'Age': age, 'Gender': gender, 'Phone Number': phone_number}
+    main_csv = main_csv.append(new_patient, ignore_index=True)
 
-        username = st.text_input("Username")
-        password = st.text_input("Password", type="password")
+    # Update main.csv on GitHub
+    with open('main.csv', 'w') as f:
+        main_csv.to_csv(f, index=False)
+    repo.update_file(contents.path, "Updated main.csv", open('main.csv').read())
 
-        if st.button("Login"):
-            if username == USERNAME and password == PASSWORD:
-                st.session_state.logged_in = True
-                st.experimental_rerun()
-            else:
-                st.error("Incorrect username or password. Please try again.")
+    # Create new patient CSV file
+    patient_csv = pd.DataFrame(columns=['Date', 'Code', 'Glucose', 'Task'])
+    patient_csv.to_csv(f'{patient_id}.csv', index=False)
 
-    return st.session_state.logged_in
+    # Upload new patient CSV to GitHub
+    repo.create_file(f'{patient_id}.csv', f"Added {patient_id}.csv", open(f'{patient_id}.csv').read())
 
-def home():
-    # Displaying brand logo and another image side by side
-    col1, col2, col3 ,col4, col5 ,col6= st.columns(6)
-    
-    # Displaying brand logo with reduced size
-    with col1:
-        st.image("MedWatchersLogo.jpeg", width=150)
-    
-    # Displaying another image
-    with col2:
-        st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=800)
+    return "Patient added successfully"
 
-    # Applying custom CSS to reduce space between columns and stretch image
-    st.markdown(
-        """
-        <style>
-        .css-1l02zno {
-            margin-right: -20px !important;
-            margin-left: -20px !important;
-        }
-        .css-1s9erse img {
-            object-fit: fill;
-            width: 100%;
-            height: 100%;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+# Function to delete patient
+def delete_patient(patient_id):
+    # Load main.csv from GitHub
+    g = Github("YOUR_GITHUB_TOKEN")
+    repo = g.get_repo("YOUR_REPOSITORY_NAME")
+    contents = repo.get_contents("main.csv")
+    main_csv = pd.read_csv(contents.download_url)
 
-    st.write("# Home Page")
-    st.write("Welcome to MedWatcher!")
-    st.write("MedWatcher is a dashboard application designed to help diabetic patients and healthcare providers monitor and manage glucose levels effectively.")
-    st.write("With MedWatcher, you can:")
-    st.write("- View detailed patient information, including glucose data and relevant tasks.")
-    st.write("- Analyze glucose trends over time with interactive charts.")
-    st.write("- Receive alerts for glucose levels outside the normal range.")
-    st.write("To get started, navigate using the sidebar on the left.")
+    # Check if patient_id exists
+    if patient_id not in main_csv['Patient ID'].values:
+        return "Error: Patient ID does not exist"
 
+    # Remove patient from main.csv
+    main_csv = main_csv[main_csv['Patient ID'] != patient_id]
 
+    # Update main.csv on GitHub
+    with open('main.csv', 'w') as f:
+        main_csv.to_csv(f, index=False)
+    repo.update_file(contents.path, "Updated main.csv", open('main.csv').read())
 
+    # Delete patient CSV from GitHub
+    repo.delete_file(f"{patient_id}.csv", f"Deleted {patient_id}.csv")
 
-def about_us():
-    col1, col2, col3 ,col4, col5 ,col6= st.columns(6)
-    
-    # Displaying brand logo with reduced size
-    with col1:
-        st.image("MedWatchersLogo.jpeg", width=150)
-    
-    # Displaying another image
-    with col2:
-        st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=800)
+    return "Patient deleted successfully"
 
-    # Applying custom CSS to reduce space between columns and stretch image
-    st.markdown(
-        """
-        <style>
-        .css-1l02zno {
-            margin-right: -20px !important;
-            margin-left: -20px !important;
-        }
-        .css-1s9erse img {
-            object-fit: fill;
-            width: 100%;
-            height: 100%;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-    st.write("# About Us")
-    st.write("MedWatcher is a platform dedicated to improving diabetes management for patients and healthcare providers.")
-    st.write("Our mission is to provide tools and insights to empower individuals to better understand and control their glucose levels.")
-    st.write("For any inquiries or feedback, please contact us at contact@medwatcher.com.")
-    
-    # Add your photo, name, and email ID
-    st.write("## Meet the Team")
-    
-    # Create two columns for the photos
-    col1, col2 = st.columns(2)
-    
-    # Photo 1
-    with col1:
-        st.image("img1.jpeg", caption="Dhwani Bhavankar", width=100, use_column_width=False, output_format='png')
-        #st.write("**Dhwani Bhavankar**")
-        st.write("dhwani.bhavankar.btech2022@sitpune.edu.in")
-    
-    # Photo 2
-    with col2:
-        st.image("img2.jpeg", caption="Ananya Mehta", width=100, use_column_width=False, output_format='png')
-        #st.write("**Ananya Mehta**")
-        st.write("ananya39mehta@gmail.com")
-
-    # Photo 3
-    with col1:
-        st.image("img3.jpeg", caption="Harsimran Kaur", width=100, use_column_width=False, output_format='png')
-        #st.write("**Harsimran Kaur**")
-        st.write("harsimrankaur2493@gmail.com")
-    
-    # Photo 4
-    with col2:
-        st.image("img4.jpeg", caption="Mayank Sahai", width=100, use_column_width=False, output_format='png')
-        #st.write("**Mayank Sahai**")
-        st.write("smayank2412@gmail.com")
-        
-def add_patients():
-    st.write("# Add Patients")
-    
-
-
+# Define the MultiApp class
 class MultiApp:
     def __init__(self):
         self.apps = []
@@ -184,13 +74,30 @@ class MultiApp:
         })
 
     def run(self):
-        if not login():
+        if "logged_in" not in st.session_state:
+            st.session_state.logged_in = False
+
+        if not st.session_state.logged_in:
+            st.write("<div align='center'><h1>Welcome to MedWatcher</h1></div>", unsafe_allow_html=True)
+            st.markdown("---")
+            st.write("<h2>Login</h2>", unsafe_allow_html=True)
+
+            username = st.text_input("Username")
+            password = st.text_input("Password", type="password")
+
+            if st.button("Login"):
+                if username == USERNAME and password == PASSWORD:
+                    st.session_state.logged_in = True
+                    st.experimental_rerun()
+                else:
+                    st.error("Incorrect username or password. Please try again.")
+
             return
 
         with st.sidebar:
             app = option_menu(
                 menu_title="MedWatcher",
-                options=['Home', 'Patients', 'Add Patients','Alerts', 'About Us'],  # Added 'About Us' option
+                options=['Home', 'Add Patients', 'Delete Patients', 'About Us'],  # Added 'About Us' option
                 default_index=0,
                 styles={
                     "container": {"padding": "5!important", "background-color": 'black'},
@@ -202,99 +109,59 @@ class MultiApp:
             )
 
         if app == "Home":
-            home()
-        elif app == 'Alerts':
-            col1, col2, col3 ,col4, col5 ,col6= st.columns(6)
-    
-            # Displaying brand logo with reduced size
-            with col1:
-                st.image("MedWatchersLogo.jpeg", width=150)
-            
-            # Displaying another image
-            with col2:
-                st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=800)
-        
-            # Applying custom CSS to reduce space between columns and stretch image
-            st.markdown(
-                """
-                <style>
-                .css-1l02zno {
-                    margin-right: -20px !important;
-                    margin-left: -20px !important;
-                }
-                .css-1s9erse img {
-                    object-fit: fill;
-                    width: 100%;
-                    height: 100%;
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
-            alerts.app()
-        elif app == 'Patients':
-            col1, col2, col3 ,col4, col5 ,col6= st.columns(6)
-            # Displaying brand logo with reduced size
-            with col1:
-                st.image("MedWatchersLogo.jpeg", width=150)
-            
-            # Displaying another image
-            with col2:
-                st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=800)
-        
-            # Applying custom CSS to reduce space between columns and stretch image
-            st.markdown(
-                """
-                <style>
-                .css-1l02zno {
-                    margin-right: -20px !important;
-                    margin-left: -20px !important;
-                }
-                .css-1s9erse img {
-                    object-fit: fill;
-                    width: 100%;
-                    height: 100%;
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
-            st.write("# Patients")
-            patients()
-            
-        elif app == 'Add Patients':  # Handling 'Add Patients' page
-            col1, col2, col3 ,col4, col5 ,col6= st.columns(6)
-    
-            # Displaying brand logo with reduced size
-            with col1:
-                st.image("MedWatchersLogo.jpeg", width=150)
-            
-            # Displaying another image
-            with col2:
-                st.image("https://www.siu.edu.in/images/Symbiosis-International-University-logo.png", width=800)
-        
-            # Applying custom CSS to reduce space between columns and stretch image
-            st.markdown(
-                """
-                <style>
-                .css-1l02zno {
-                    margin-right: -20px !important;
-                    margin-left: -20px !important;
-                }
-                .css-1s9erse img {
-                    object-fit: fill;
-                    width: 100%;
-                    height: 100%;
-                }
-                </style>
-                """,
-                unsafe_allow_html=True
-            )
-            add_patients()    
-            
-        elif app == 'About Us':  # Handling 'About Us' page
-            about_us()
+            self.home()
+        elif app == 'About Us':
+            self.about_us()
+        elif app == 'Add Patients':  
+            self.add_patients() 
+        elif app == 'Delete Patients':  
+            self.delete_patients()   
 
-if __name__ == "__main__":
-    multi_app = MultiApp()
-    multi_app.run()
+    def home(self):
+        st.write("# Home Page")
+        st.write("Welcome to MedWatcher!")
+        st.write("MedWatcher is a dashboard application designed to help diabetic patients and healthcare providers monitor and manage glucose levels effectively.")
+        st.write("With MedWatcher, you can:")
+        st.write("- View detailed patient information, including glucose data and relevant tasks.")
+        st.write("- Analyze glucose trends over time with interactive charts.")
+        st.write("- Receive alerts for glucose levels outside the normal range.")
+        st.write("To get started, navigate using the sidebar on the left.")
+
+    def about_us(self):
+        st.write("# About Us")
+        st.write("MedWatcher is a platform dedicated to improving diabetes management for patients and healthcare providers.")
+        st.write("Our mission is to provide tools and insights to empower individuals to better understand and control their glucose levels.")
+        st.write("For any inquiries or feedback, please contact us at contact@medwatcher.com.")
+        st.write("## Meet the Team")
+        st.write("**Dhwani Bhavankar** - dhwani.bhavankar.btech2022@sitpune.edu.in")
+        st.write("**Ananya Mehta** - ananya39mehta@gmail.com")
+        st.write("**Harsimran Kaur** - harsimrankaur2493@gmail.com")
+        st.write("**Mayank Sahai** - smayank2412@gmail.com")
+
+    def add_patients(self):
+        st.write("# Add Patients")
+        # Input fields for adding new patient
+        patient_id = st.text_input("Patient ID")
+        name = st.text_input("Name")
+        age = st.number_input("Age", min_value=0, max_value=150)
+        gender = st.selectbox("Gender", ["Male", "Female"])
+        phone_number = st.text_input("Phone Number")
+
+        # Button to add new patient
+        if st.button("Add Patient"):
+            result = add_new_patient(patient_id, name, age, gender, phone_number)
+            st.write(result)
+
+    def delete_patients(self):
+        st.write("# Delete Patients")
+        # Input field for deleting patient
+        patient_id_to_delete = st.text_input("Patient ID to delete")
+
+        # Button to delete patient
+        if st.button("Delete Patient"):
+            result = delete_patient(patient_id_to_delete)
+            st.write(result)
+
+# Create instance of MultiApp and add apps
+multi_app = MultiApp()
+multi_app.run()
