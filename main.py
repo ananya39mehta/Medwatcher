@@ -38,7 +38,7 @@ def login():
         f"""
         <style>
         .stApp {{
-            background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fgovinsider.asia%2Fintl-en%2Farticle%2Fdata-is-giving-rise-to-better-medical-practice-heres-how&psig=AOvVaw38OKVpTQ2gMtm7Keu46kyU&ust=1711819174055000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMjzlcX9mYUDFQAAAAAdAAAAABAJ");
+            background-image: url("https://gov-web-sing.s3.ap-southeast-1.amazonaws.com/uploads/2023/1/Wordpress-featured-images-48-1672795987342.jpg");
             background-attachment: fixed;
             background-size: cover
         }}
