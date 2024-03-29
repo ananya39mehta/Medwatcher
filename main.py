@@ -90,25 +90,25 @@ def about_us():
     
     # Photo 1
     with col1:
-        st.image("img1.jpeg", caption="Dhwani Bhavankar", width=100, height=row_height, use_column_width=False, output_format='jpeg')
+        st.image("img1.jpeg", caption="Dhwani Bhavankar", width=100, height=row_height, use_column_width=False)
         st.write("**Dhwani Bhavankar**")
         st.write("dhwani.bhavankar.btech2022@sitpune.edu.in")
     
     # Photo 2
     with col2:
-        st.image("img2.jpeg", caption="Ananya Mehta", width=100, height=row_height, use_column_width=False, output_format='jpeg')
+        st.image("img2.jpeg", caption="Ananya Mehta", width=100, height=row_height, use_column_width=False)
         st.write("**Ananya Mehta**")
         st.write("ananya39mehta@gmail.com")
 
     # Photo 3
     with col1:
-        st.image("img3.jpeg", caption="Harsimran Kaur", width=100, height=row_height, use_column_width=False, output_format='jpeg')
+        st.image("img3.jpeg", caption="Harsimran Kaur", width=100, height=row_height, use_column_width=False)
         st.write("**Harsimran Kaur**")
         st.write("harsimrankaur2493@gmail.com")
     
     # Photo 4
     with col2:
-        st.image("img4.jpeg", caption="Mayank Sahai", width=100, height=row_height, use_column_width=False, output_format='jpeg')
+        st.image("img4.jpeg", caption="Mayank Sahai", width=100, height=row_height, use_column_width=False)
         st.write("**Mayank Sahai**")
         st.write("smayank2412@gmail.com")
 
